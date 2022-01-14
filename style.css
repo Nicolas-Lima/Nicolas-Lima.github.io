@@ -191,6 +191,10 @@ button {
     margin-right: 2px;
 }
 
+[id *= "checkbox-tarefa"]:hover {
+    cursor: pointer;
+}
+
 #botao-lixeira {
     border: none;
     width: 34px;
@@ -199,13 +203,14 @@ button {
     margin-right: 10px;
 }
 
-#botao-lixeira > img {
+#botao-lixeira > svg {
     width: 20px;
     height: 20px;
 }
 
 #botao-lixeira:hover {
     background-color: #FA003F;
+    cursor: pointer;
 }
 
 @media (max-width: 1191px) {
