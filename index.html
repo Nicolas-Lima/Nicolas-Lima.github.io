@@ -1,56 +1,158 @@
 <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light p-0" style="border-bottom: 1px solid black;">
+        <div class="container-fluid">
+            <a class="navbar-brand ps-3 pe-3" href="#">
+                <img src="https://cdn.pixabay.com/photo/2012/05/07/18/57/blog-49006_960_720.png" alt="" width="" height="80">
+              </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav w-100">
+              <li class="nav-item pe-2 ms-2 ms-sm-0">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown ms-2 ms-sm-0">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
 
-<html>
-    <head>
-    	<title>Testando</title>
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="github.svg">
-    </head>
+            <ul class="navbar-nav align-self-end me-5">
+                <li class="nav-item dropdown dropstart ms-2 ms-sm-0">
+                    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                          </svg>
+                    </a>
+                    <ul class="dropdown-menu mb-2 mb-sm-0" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Logar</a></li>
+                      <li><a class="dropdown-item" href="#">Opções</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Sair</a></li>
+                    </ul>
+                  </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-    <body>
-        <aside>
-            <nav>
-                <a onclick="mostrarTarefas()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-files" viewBox="0 0 16 16">
-                    <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 13V4a2 2 0 0 0-2-2H5a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1zM3 4a1 1 0 0 1 1-1h7a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z"/>
-                  </svg> <span>Tarefas</span></a>
+      <section class="mt-5 ms-0 ms-md-5 ms-sm-4 col-12 col-lg-7 col-xl-8">
+        <div class="row">
+  
+          <div class="card col-12 col-sm-11 col-md-9 col-lg-12 col-xl-9 mt-4 mt-sm-5">
+            <a href="" class="text-dark text-decoration-none">
+              <div class="card-body pb-sm-0 ps-2">
+                <h5 class="card-title">A caixa e os caixotesA caixa e os caixotesA caixa e os caixotesA caixa e os caixotesA caixa e os caixotesA caixa e os caixotes
+                </h5>
+              </div>
+              <img src="https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2018/06/12_pl540_unesco1.jpg" class="card-img-top p-1" alt="...">
+              <div class="card-body ps-2">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </a>
+          </div>
 
-                  <a onclick="mostrarConcluidos()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-square-fill" viewBox="0 0 16 16">
-                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"/>
-                  </svg> <span>Concluídas</span></a>
-
-                  <a onclick="mostrarPendentes()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-square-fill" viewBox="0 0 16 16">
-                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6 4c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995A.905.905 0 0 1 8 4zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                  </svg> <span>Pendentes</span></a>
-            </nav>
-        </aside>
-        
-        <header>
-            <span id="nome-lista">Lista de mercado</span>
-            
-            <div id="adicionar-tarefa1">
-                <button id="botao-adicionar-tarefa" title="Adicionar tarefa" onclick="campoAdicionarTarefa()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/></svg></button>  
-                
-                <label for="botao-adicionar-tarefa" id="label-botao-adicionar-tarefa">Adicionar tarefa</label>
-            </div>
-
-            <a href="listas.html">Minhas listas</a>
-            
-        </header>
-        <section id="tarefas">
-              <div id="adicionar-tarefa" class="oi">
-                <label for="text">Coloque o nome da sua tarefa</label>
-                <div id="nome-tarefa">
-                  <input type="text" id="text" required>
-                  <button onclick="AdicionarTarefa()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
-                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
-                    </svg></button>
+          <div class="card col-12 col-sm-11 col-md-10 col-lg-12 col-xl-9 mt-4 mt-sm-5">
+            <a href="" class="text-dark text-decoration-none">
+              <div class="card-body pb-sm-0 ps-2">
+                <h5 class="card-title">A caixa e os caixotesA caixa e os caixotesA caixa e os caixotesA caixa e os caixotesA caixa e os caixotesA caixa e os caixotes
+                </h5>
+              </div>
+              <img src="https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2018/06/12_pl540_unesco1.jpg" class="card-img-top p-1" alt="...">
+              <div class="card-body ps-2">
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </a>
+          </div>
+      
+            <aside class="aside border p-2" style="width: 18rem;">
+              <p class="h4 mb-0 pt-1 ps-2">Post anterior</p>
+              <div style="width: 17rem;">
+                <div class="card border-0 ps-1">
+                  <a href="" class="text-dark">
+                    <div class="card-body pb-0 ps-2">
+                      <h5 class="card-title">A caixa e os caixotesA caixa e os ca</h5>
+                    </div>
+                    <img src="https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2018/06/12_pl540_unesco1.jpg" class="card-img-top p-1" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                  </a>
                 </div>
-            </div>
-        </section>
+              </div>
+              <hr>
+              <p class="h4 mt-3 pt-1 ps-2">Posts mais lidos</p>
+              <div style="width: 17rem;">
+                <div class="card border-0 ps-1">
+                  <div class="card-body pb-0 ps-2">
+                    <h5 class="card-title">A caixa e os caixotes</h5>
+                  </div>
+                  <img src="https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2018/06/12_pl540_unesco1.jpg" class="card-img-top p-1" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div style="width: 17rem;">
+                <div class="card border-0 ps-1">
+                  <div class="card-body pb-0 ps-2 ">
+                    <h5 class="card-title">A caixa e os caixotes</h5>
+                  </div>
+                  <img src="https://www.revistaplaneta.com.br/wp-content/uploads/sites/3/2018/06/12_pl540_unesco1.jpg" class="card-img-top p-1" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  </div>
+                </div>
+              </div>
+            </aside>
+        </div>
+      </section>
 
+      <style>
+        section > div > div > div > a {
+          text-decoration: none;
+        }
 
-        <script src="codigo.js"></script>
-    </body>
+        .aside {
+          position: absolute;
+          right: 100px;
+          display: none;
+        }
+
+        @media (min-width: 992px) {
+            .aside {
+                position: absolute;
+                right: 30px;
+                display: block;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .aside {
+                position: absolute;
+                right: 100px;
+            }
+        }
+      </style>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
 </html>
