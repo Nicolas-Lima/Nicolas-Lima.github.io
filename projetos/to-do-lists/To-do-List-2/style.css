@@ -1,0 +1,32 @@
+#div1 {
+    max-height: 100vh;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+#div1 > span {
+    height: 500px;
+}
+
+#div2 {
+    max-height: 100vh;
+    overflow: auto;
+}
+
+#div2 > span {
+    display: block;
+    height: 500px;
+}
+
+#div2::-webkit-scrollbar {
+    width: 10px;
+}
+
+#div2::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#div2::-webkit-scrollbar-thumb {
+    background-color: #495057;
+    border-radius: 25px;
+}
