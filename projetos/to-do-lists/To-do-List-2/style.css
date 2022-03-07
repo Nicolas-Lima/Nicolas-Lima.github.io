@@ -1,32 +1,46 @@
+#botaoOffCanvas {
+    width: 70px;
+}
+
 #div1 {
-    max-height: 100vh;
-    box-sizing: border-box;
-    overflow-y: scroll;
+    width: 400px;
 }
 
-#div1 > span {
-    height: 500px;
-}
-
-#div2 {
+#div1, #div2, #div3 {
+    height: 100vh;
     max-height: 100vh;
     overflow: auto;
 }
 
-#div2 > span {
-    display: block;
-    height: 500px;
-}
-
-#div2::-webkit-scrollbar {
+#div1::-webkit-scrollbar, #div2::-webkit-scrollbar, #div3::-webkit-scrollbar {
     width: 10px;
 }
 
-#div2::-webkit-scrollbar-track {
+#div1::-webkit-scrollbar-track, #div2::-webkit-scrollbar-track, #div3::-webkit-scrollbar-track {
     background: transparent;
 }
 
-#div2::-webkit-scrollbar-thumb {
+#div1::-webkit-scrollbar-thumb, #div2::-webkit-scrollbar-thumb, #div3::-webkit-scrollbar-track  {
     background-color: #495057;
     border-radius: 25px;
+}
+    
+@media (max-width: 576px) { /* None */
+
+}
+ 
+@media (min-width: 576px) { /* SM */
+}
+ 
+@media (min-width: 768px) { /* MD */
+}
+ 
+@media (min-width: 992px) { /* LG */
+}
+ 
+@media (min-width: 1200px) { /* XL */
+}
+ 
+@media (min-width: 1400px) { /* XXL */
+ 
 }
