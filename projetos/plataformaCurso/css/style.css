@@ -1,0 +1,26 @@
+body {
+    max-height: 100%;
+    overflow-y: hidden;
+}
+
+#volumeMusica {
+    width: 70%;
+}
+
+#conteudo {
+    max-height: 100%;
+    overflow-y: scroll;
+}
+
+div[id*="play"] a, div[id*="pause"] a {
+    color: initial; 
+}
+
+div[id*="play"] a svg:hover, div[id*="pause"] a svg:hover {
+    transform: scale(1.2);
+}
+
+#iconePesquisar:hover, div[id*="play"] a > #tocarSvg, #pausarSvg {
+    cursor: pointer;
+}
+
