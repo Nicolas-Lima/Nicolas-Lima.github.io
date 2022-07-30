@@ -545,6 +545,10 @@ function colocarMusicaParaTocar(botaoPlay, verificarSeMusicaAcabou) {
     mp3.src = `../videos/musica${id}.mp3`;
     mp3.volume = volumeMusica;
 
+    setTimeout(() => {
+        mp3.currentTime = mp3.duration - 10;
+    }, 2000);
+
     if(musicaTocando && musicaTocando != mp3 && musicaTocando != lofiMp3Element) {
         try {
             const divBotaoPauseMusicaTocando = document.querySelector(`#pause-${musicaTocando.id}`);
@@ -596,6 +600,12 @@ function colocarMusicaParaTocar(botaoPlay, verificarSeMusicaAcabou) {
 
                 colocarMusicaParaTocar(botaoPlayProximaMusica, verificarSeMusicaAcabou);
 
+                const checkbox = document.querySelector(`#musica-${id} .checkbox input`);
+                
+                if(checkbox.hasAttribute("checked")) {
+                    checkbox.click();
+                };
+
                 pararIntervalVerificando(true);
             }
 
@@ -609,6 +619,12 @@ function colocarMusicaParaTocar(botaoPlay, verificarSeMusicaAcabou) {
                 divBotaoPlayMusicaTocando.classList.remove("d-none");
         
                 divMusicaTocando.removeChild(musicaTocando);
+
+                const checkbox = document.querySelector(`#musica-${id} .checkbox input`);
+
+                if(checkbox.hasAttribute("checked")) {
+                    checkbox.click();
+                };
 
                 musicaTocando = false;
                 
