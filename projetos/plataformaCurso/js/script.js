@@ -464,7 +464,7 @@ const musicas = {
     "454": "16 Toneladas - Noriel Vilela.mp3",
     "455": "Ramones - Poison Heart (Official Video).mp3",
     "456": "Eminem - Mockingbird (Official Music Video).mp3"
-};
+,"457": "A Horse with No Name.mp3","458": "Debbie Gibson - Lost In Your Eyes (Official Music Video).mp3","459": "Glory of Love.mp3","460": "Making Love Out of Nothing at All.mp3","461": "Give It Up.mp3","462": "It Might Be You (Theme from Tootsie).mp3","463": "Keane - Somewhere Only We Know (Official Video).mp3","464": "Glenn Medeiros - Nothing's Gonna Change My Love for You.mp3","465": "Vanessa Williams - Save The Best For Last (Official Video).mp3","466": "Radiohead - Fake Plastic Trees.mp3","467": "Eric Clapton [ Sunshine of your love ] HD.mp3","468": "Eric Clapton - After midnight (1988 Version).mp3","469": "Deep Purple - Smoke on the Water (Audio).mp3"};
 
 function mudarVolume() {
     const divmudarVolumeMusica = document.querySelector("#mudarVolumeMusica");
@@ -542,15 +542,19 @@ function colocarMusicaParaTocar(botaoPlay, verificarSeMusicaAcabou) {
 
     const mp3 = document.createElement("video");
     mp3.id = id;
-    mp3.src = `videos/musica${id}.mp3`;
+    mp3.src = `../videos/musica${id}.mp3`;
     mp3.volume = volumeMusica;
 
     if(musicaTocando && musicaTocando != mp3 && musicaTocando != lofiMp3Element) {
-        const divBotaoPauseMusicaTocando = document.querySelector(`#pause-${musicaTocando.id}`);
-        divBotaoPauseMusicaTocando.classList.add("d-none");
-
-        const divBotaoPlayMusicaTocando = document.querySelector(`#play-${musicaTocando.id}`);
-        divBotaoPlayMusicaTocando.classList.remove("d-none");
+        try {
+            const divBotaoPauseMusicaTocando = document.querySelector(`#pause-${musicaTocando.id}`);
+            divBotaoPauseMusicaTocando.classList.add("d-none");
+    
+            const divBotaoPlayMusicaTocando = document.querySelector(`#play-${musicaTocando.id}`);
+            divBotaoPlayMusicaTocando.classList.remove("d-none");
+        } catch(err) {
+            
+        };
 
         divMusicaTocando.removeChild(musicaTocando);
     }
@@ -840,7 +844,6 @@ function pesquisarMusica() {
         
         <hr>`;
 
-       
         checkboxCheck(musicaNaLista, id);
     };
 
@@ -874,15 +877,13 @@ function pesquisarMusica() {
    
             if(nomeLowerCase.split(nomeMusica, 2).length > 1 && isMp3) {
                 divMusica(id, nome, checkboxCheck);
-            }
+            };
         });
 
         // Checkboxes
 
         const checkboxes = document.querySelectorAll(`[id*="musica"] > .checkbox input`);
         checkboxes.forEach(checkbox => {
-            const divListaRecompensas = document.querySelector("#listaRecompensas");
-
             checkbox.addEventListener("click", () => {
                 const id = checkbox.parentElement.parentElement.id.split("musica-")[1];
 
@@ -937,6 +938,15 @@ function pesquisarMusica() {
                 divBotaoPause.classList.add("d-none");
                 divBotaoPlay.classList.remove("d-none");
             });
+
+            const divBotaoPause = botaoPause.parentElement;
+            const id = divBotaoPause.id.split("pause-")[1];
+
+            if(id == musicaTocando.id && !musicaTocando.paused) {
+                const divBotaoPlay = document.querySelector(`#play-${id}`);
+                divBotaoPause.classList.remove("d-none");
+                divBotaoPlay.classList.add("d-none");
+            };
         });
     };
 };
@@ -986,3 +996,6 @@ mostrarDivTimer();
             mostrarDivVideos();
         };
     });
+
+
+
