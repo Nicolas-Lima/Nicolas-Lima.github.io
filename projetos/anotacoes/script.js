@@ -41,6 +41,12 @@ const switchPDF = document.querySelector("#switchPDF");
 const buttonsSwitchPDF = switchPDF.querySelectorAll("button[value]");
 
 buttonsSwitchPDF.forEach(buttonSwitchPDF => {
+    // Disabling the html.pdf button
+
+    if(buttonSwitchPDF.value == "html") {
+        buttonSwitchPDF.setAttribute("disabled", "");
+    };
+
     buttonSwitchPDF.addEventListener("click", () => {
         const buttonSwitchPDFValue = buttonSwitchPDF.value;
 
@@ -65,5 +71,12 @@ buttonsSwitchPDF.forEach(buttonSwitchPDF => {
 
         changePDFData(PDFPath);
         changePDFTitle(PDFsName[buttonSwitchPDFValue]);
+
+        // Changing the state of the buttons
+
+        const activeButton = switchPDF.querySelector("button[disabled]");
+        activeButton.removeAttribute("disabled");
+
+        buttonSwitchPDF.setAttribute("disabled", "");
     });
 });
