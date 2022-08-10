@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+    <title>Anotações</title>
+</head>
+<body class="bg-dark px-5">
+    <!-- 
+        PDF -> Archive
+        pdf -> Element
+    -->
+
+    <div id="titleAndSwitchPDF" class="mb-3">
+        <h1 class="text-center text-light mt-3" id="PDFTitle">HTML</h1>
+
+        <div id="switchPDF">
+            <button type="button" class="btn btn-secondary me-2" value="html">HTML</button>
+
+            <button type="button" class="btn btn-secondary me-2" value="css">CSS</button>
+
+            <!-- Javascript PDFs -->
+
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                Javascript
+            </button>
+
+            <ul class="dropdown-menu mt-2" id="javascriptPDFs">
+                <li><button class="dropdown-item" href="#" value="fundamentos" javascriptPDF>Fundamentos</a></li>
+
+                <li><button class="dropdown-item" href="#" value="estruturasDeControle" javascriptPDF>Estruturas de controle</button></li>
+            </ul>
+
+            <!-- END Javascript PDFs -->
+        </div>
+    </div>
+
+    <object data="pdfs/html.pdf" type="application/pdf" id="pdf" class="w-100" style="height: 700px;">
+        <p>Seu navegador não tem um plugin pra PDF</p>
+    </object>
+
+    <form class="mt-5">
+        <input type="text" id="heightPDF" placeholder="Digite a altura do PDF" class="ps-2">
+        <input type="text" id="widthPDF" placeholder="Digite a largura do PDF" class="ps-2">
+    </form>
+
+    <script src="script.js"></script>
+    <script src="../../js/bootstrap.bundle.js"></script>
+</body>
+</html>
