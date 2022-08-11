@@ -14,28 +14,39 @@
     -->
 
     <div id="titleAndSwitchPDF" class="mb-3">
-        <h1 class="text-center text-light mt-3" id="PDFTitle">HTML</h1>
+        <!-- <h1 class="text-center text-light mt-3" id="PDFTitle">HTML</h1> -->
 
-        <div id="switchPDF">
-            <button type="button" class="btn btn-secondary me-2" value="html" disabled>HTML</button>
+        <!-- 
+        <div id="switchPDF"> 
+        -->
 
-            <button type="button" class="btn btn-secondary me-2" value="css">CSS</button>
+        <div id="switchPDF" class="ms-3 mt-5"> 
+
+            <!-- <button type="button" class="btn btn-secondary me-2" value="html" disabled>HTML</button> -->
+
+            <a href="https://docs.google.com/document/d/1yiAFv05o3IG1ouAthAjz7TJ7UZHh7ifn-tIZoTc8XZs/edit?usp=sharing" target="_blank" type="button" class="btn btn-secondary me-2" value="html">HTML</a>
+
+            <a href="https://docs.google.com/document/d/1Y8vZP2ADTiFsNMjVbiVx4l-dE6SomzXlfXddjroe_8I/edit?usp=sharing" target="_blank" type="button" class="btn btn-secondary me-2" value="css">CSS</a>
 
             <!-- Javascript PDFs -->
 
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <a href="" target="_blank" type="button" class="btn btn-secondary dropdown-toggle me-2" data-bs-toggle="dropdown" aria-expanded="false">
                 Javascript
-            </button>
+            </a>
 
             <ul class="dropdown-menu mt-2" id="javascriptPDFs">
-                <li><button class="dropdown-item" href="#" value="fundamentos" javascriptPDF>Fundamentos</a></li>
+                <li><a href="https://docs.google.com/document/d/1vTeHhXVomur8YuadpU1Jz6u6_DMPLUFeUpj-nYlrnPY/edit?usp=sharing" target="_blank" class="dropdown-item" href="#" value="fundamentos" javascriptPDF>Fundamentos</a></li>
 
-                <li><button class="dropdown-item" href="#" value="estruturasDeControle" javascriptPDF>Estruturas de controle</button></li>
+                <li><a href="https://docs.google.com/document/d/1I5gDfL-A7bJa76DQBgyzQhemqmaUpKwRSaRBBwT9wBM/edit?usp=sharing" target="_blank" class="dropdown-item" href="#" value="estruturasDeControle" javascriptPDF>Estruturas de controle</a></li>
             </ul>
 
             <!-- END Javascript PDFs -->
+
+            <a href="https://docs.google.com/document/d/1-oOC7ckXyn0oD1sVaEV89xuEaHMpY_jB-HJEAxLVpv8/edit?usp=sharing" target="_blank" type="button" class="btn btn-secondary me-2" value="excel">Excel</a>
         </div>
     </div>
+
+    <!-- 
 
     <object data="pdfs/html.pdf" type="application/pdf" id="pdf" class="w-100" style="height: 700px;">
         <p>Seu navegador não tem um plugin pra PDF</p>
@@ -44,7 +55,9 @@
     <form class="mt-5">
         <input type="text" id="heightPDF" placeholder="Digite a altura do PDF" class="ps-2">
         <input type="text" id="widthPDF" placeholder="Digite a largura do PDF" class="ps-2">
-    </form>
+    </form> 
+
+    -->
 
     <script src="script.js"></script>
     <script src="../../js/bootstrap.bundle.js"></script>

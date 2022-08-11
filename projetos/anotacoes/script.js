@@ -1,8 +1,11 @@
+/*
+
 const PDFsName = {
     html: "HTML",
     css: "CSS",
     fundamentos: "Fundamentos",
     estruturasDeControle: "Estruturas de controle",
+    excel: "Excel",
 };
 
 const pdf = document.querySelector("#pdf");
@@ -80,3 +83,5 @@ buttonsSwitchPDF.forEach(buttonSwitchPDF => {
         buttonSwitchPDF.setAttribute("disabled", "");
     });
 });
+
+*/
