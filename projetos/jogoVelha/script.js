@@ -38,16 +38,18 @@ buttons.forEach(button => {
         if(whoIsPlaying == 1) {
             button.setAttribute("type", type);
             whoIsPlaying += 1;
+            whoIsPlaying2 = 1;
         }
 
         else {
             button.setAttribute("type", type);
             whoIsPlaying -= 1;
+            whoIsPlaying2 = 2;
         };
 
         whoPlaysNow.innerText = `Vez do jogador ${whoIsPlaying}`;
 
-        // X and Y lines
+        // X, Y and Diagonal lines
 
         const xLines = {
             xline1: Array.from(board.querySelectorAll("#btn1, #btn2, #btn3")),
@@ -61,10 +63,16 @@ buttons.forEach(button => {
             yline3: Array.from(board.querySelectorAll("#btn3, #btn6, #btn9")),
         };
 
+        const diagonalLines = {
+            dline1: Array.from(board.querySelectorAll("#btn1, #btn5, #btn9")),
+            dline2: Array.from(board.querySelectorAll("#btn3, #btn5, #btn7")),
+        };
+
         // How many...
     
         const howManyFilledOnX = {};
         const howManyFilledOnY = {};
+        const howManyFilledOnDiagonal = {};
  
         // How many on X lines
 
@@ -80,6 +88,16 @@ buttons.forEach(button => {
 
         Object.keys(yLines).forEach(line => {
             howManyFilledOnY[line] = yLines[line].filter(btn => {
+                if(btn.getAttribute("type") == type) {
+                    return true;
+                };
+            }).length;
+        });
+
+        // How many on Diagonal lines
+
+        Object.keys(diagonalLines).forEach(line => {
+            howManyFilledOnDiagonal[line] = diagonalLines[line].filter(btn => {
                 if(btn.getAttribute("type") == type) {
                     return true;
                 };
@@ -126,6 +144,28 @@ buttons.forEach(button => {
                 });
 
                 yLines[line].forEach(button => {
+                    button.classList.remove("btn-secondary");
+                    button.classList.add("btn-success");
+                });
+            };
+        });
+
+        // On Diagonal
+
+        Object.keys(howManyFilledOnDiagonal).forEach(line => {
+            const howManyFilled = howManyFilledOnDiagonal[line];
+            
+            if(howManyFilled == 3) {
+                buttons.forEach(button => {
+                    button.setAttribute("disabled", "true");
+
+                    whoPlaysNow.classList.remove("text-dark");
+                    whoPlaysNow.classList.add("text-success");
+
+                    whoPlaysNow.innerText = `Jogador ${whoIsPlaying2} ganhou!`;  
+                });
+
+                diagonalLines[line].forEach(button => {
                     button.classList.remove("btn-secondary");
                     button.classList.add("btn-success");
                 });
