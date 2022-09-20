@@ -33,143 +33,146 @@ const players = {
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         const type = players[`player${whoIsPlaying}`].type;
-        button.innerText = type;
 
-        if(whoIsPlaying == 1) {
-            button.setAttribute("type", type);
-            whoIsPlaying += 1;
-            whoIsPlaying2 = 1;
-        }
+        if(!button.getAttribute("type")) {
+            button.innerText = type;
 
-        else {
-            button.setAttribute("type", type);
-            whoIsPlaying -= 1;
-            whoIsPlaying2 = 2;
-        };
-
-        whoPlaysNow.innerText = `Vez do jogador ${whoIsPlaying}`;
-
-        // X, Y and Diagonal lines
-
-        const xLines = {
-            xline1: Array.from(board.querySelectorAll("#btn1, #btn2, #btn3")),
-            xline2: Array.from(board.querySelectorAll("#btn4, #btn5, #btn6")),
-            xline3: Array.from(board.querySelectorAll("#btn7, #btn8, #btn9")),
-        }; 
-
-        const yLines = {
-            yline1: Array.from(board.querySelectorAll("#btn1, #btn4, #btn7")),
-            yline2: Array.from(board.querySelectorAll("#btn2, #btn5, #btn8")),
-            yline3: Array.from(board.querySelectorAll("#btn3, #btn6, #btn9")),
-        };
-
-        const diagonalLines = {
-            dline1: Array.from(board.querySelectorAll("#btn1, #btn5, #btn9")),
-            dline2: Array.from(board.querySelectorAll("#btn3, #btn5, #btn7")),
-        };
-
-        // How many...
+            if(whoIsPlaying == 1) {
+                button.setAttribute("type", type);
+                whoIsPlaying += 1;
+                whoIsPlaying2 = 1;
+            }
     
-        const howManyFilledOnX = {};
-        const howManyFilledOnY = {};
-        const howManyFilledOnDiagonal = {};
- 
-        // How many on X lines
-
-        Object.keys(xLines).forEach(line => {
-            howManyFilledOnX[line] = xLines[line].filter(btn => {
-                if(btn.getAttribute("type") == type) {
-                    return true;
-                };
-            }).length;
-        });
-
-        // How many on Y lines
-
-        Object.keys(yLines).forEach(line => {
-            howManyFilledOnY[line] = yLines[line].filter(btn => {
-                if(btn.getAttribute("type") == type) {
-                    return true;
-                };
-            }).length;
-        });
-
-        // How many on Diagonal lines
-
-        Object.keys(diagonalLines).forEach(line => {
-            howManyFilledOnDiagonal[line] = diagonalLines[line].filter(btn => {
-                if(btn.getAttribute("type") == type) {
-                    return true;
-                };
-            }).length;
-        });
-
-        // Winning
-
-        // On X
-
-        Object.keys(howManyFilledOnX).forEach(line => {
-            const howManyFilled = howManyFilledOnX[line];
-            
-            if(howManyFilled == 3) {
-                buttons.forEach(button => {
-                    button.setAttribute("disabled", "true");
-
-                    whoPlaysNow.classList.remove("text-dark");
-                    whoPlaysNow.classList.add("text-success");
-
-                    whoPlaysNow.innerText = `Jogador ${whoIsPlaying2} ganhou!`;
-                });
-
-                xLines[line].forEach(button => {
-                    button.classList.remove("btn-secondary");
-                    button.classList.add("btn-success");
-                });
+            else {
+                button.setAttribute("type", type);
+                whoIsPlaying -= 1;
+                whoIsPlaying2 = 2;
             };
-        });
-
-        // On Y
-
-        Object.keys(howManyFilledOnY).forEach(line => {
-            const howManyFilled = howManyFilledOnY[line];
-            
-            if(howManyFilled == 3) {
-                buttons.forEach(button => {
-                    button.setAttribute("disabled", "true");
-
-                    whoPlaysNow.classList.remove("text-dark");
-                    whoPlaysNow.classList.add("text-success");
-
-                    whoPlaysNow.innerText = `Jogador ${whoIsPlaying2} ganhou!`;  
-                });
-
-                yLines[line].forEach(button => {
-                    button.classList.remove("btn-secondary");
-                    button.classList.add("btn-success");
-                });
+    
+            whoPlaysNow.innerText = `Vez do jogador ${whoIsPlaying}`;
+    
+            // X, Y and Diagonal lines
+    
+            const xLines = {
+                xline1: Array.from(board.querySelectorAll("#btn1, #btn2, #btn3")),
+                xline2: Array.from(board.querySelectorAll("#btn4, #btn5, #btn6")),
+                xline3: Array.from(board.querySelectorAll("#btn7, #btn8, #btn9")),
+            }; 
+    
+            const yLines = {
+                yline1: Array.from(board.querySelectorAll("#btn1, #btn4, #btn7")),
+                yline2: Array.from(board.querySelectorAll("#btn2, #btn5, #btn8")),
+                yline3: Array.from(board.querySelectorAll("#btn3, #btn6, #btn9")),
             };
-        });
-
-        // On Diagonal
-
-        Object.keys(howManyFilledOnDiagonal).forEach(line => {
-            const howManyFilled = howManyFilledOnDiagonal[line];
-            
-            if(howManyFilled == 3) {
-                buttons.forEach(button => {
-                    button.setAttribute("disabled", "true");
-
-                    whoPlaysNow.classList.remove("text-dark");
-                    whoPlaysNow.classList.add("text-success");
-
-                    whoPlaysNow.innerText = `Jogador ${whoIsPlaying2} ganhou!`;  
-                });
-
-                diagonalLines[line].forEach(button => {
-                    button.classList.remove("btn-secondary");
-                    button.classList.add("btn-success");
-                });
+    
+            const diagonalLines = {
+                dline1: Array.from(board.querySelectorAll("#btn1, #btn5, #btn9")),
+                dline2: Array.from(board.querySelectorAll("#btn3, #btn5, #btn7")),
             };
-        });
+    
+            // How many...
+        
+            const howManyFilledOnX = {};
+            const howManyFilledOnY = {};
+            const howManyFilledOnDiagonal = {};
+     
+            // How many on X lines
+    
+            Object.keys(xLines).forEach(line => {
+                howManyFilledOnX[line] = xLines[line].filter(btn => {
+                    if(btn.getAttribute("type") == type) {
+                        return true;
+                    };
+                }).length;
+            });
+    
+            // How many on Y lines
+    
+            Object.keys(yLines).forEach(line => {
+                howManyFilledOnY[line] = yLines[line].filter(btn => {
+                    if(btn.getAttribute("type") == type) {
+                        return true;
+                    };
+                }).length;
+            });
+    
+            // How many on Diagonal lines
+    
+            Object.keys(diagonalLines).forEach(line => {
+                howManyFilledOnDiagonal[line] = diagonalLines[line].filter(btn => {
+                    if(btn.getAttribute("type") == type) {
+                        return true;
+                    };
+                }).length;
+            });
+    
+            // Winning
+    
+            // On X
+    
+            Object.keys(howManyFilledOnX).forEach(line => {
+                const howManyFilled = howManyFilledOnX[line];
+                
+                if(howManyFilled == 3) {
+                    buttons.forEach(button => {
+                        button.setAttribute("disabled", "true");
+    
+                        whoPlaysNow.classList.remove("text-dark");
+                        whoPlaysNow.classList.add("text-success");
+    
+                        whoPlaysNow.innerText = `Jogador ${whoIsPlaying2} ganhou!`;
+                    });
+    
+                    xLines[line].forEach(button => {
+                        button.classList.remove("btn-secondary");
+                        button.classList.add("btn-success");
+                    });
+                };
+            });
+    
+            // On Y
+    
+            Object.keys(howManyFilledOnY).forEach(line => {
+                const howManyFilled = howManyFilledOnY[line];
+                
+                if(howManyFilled == 3) {
+                    buttons.forEach(button => {
+                        button.setAttribute("disabled", "true");
+    
+                        whoPlaysNow.classList.remove("text-dark");
+                        whoPlaysNow.classList.add("text-success");
+    
+                        whoPlaysNow.innerText = `Jogador ${whoIsPlaying2} ganhou!`;  
+                    });
+    
+                    yLines[line].forEach(button => {
+                        button.classList.remove("btn-secondary");
+                        button.classList.add("btn-success");
+                    });
+                };
+            });
+    
+            // On Diagonal
+    
+            Object.keys(howManyFilledOnDiagonal).forEach(line => {
+                const howManyFilled = howManyFilledOnDiagonal[line];
+                
+                if(howManyFilled == 3) {
+                    buttons.forEach(button => {
+                        button.setAttribute("disabled", "true");
+    
+                        whoPlaysNow.classList.remove("text-dark");
+                        whoPlaysNow.classList.add("text-success");
+    
+                        whoPlaysNow.innerText = `Jogador ${whoIsPlaying2} ganhou!`;  
+                    });
+    
+                    diagonalLines[line].forEach(button => {
+                        button.classList.remove("btn-secondary");
+                        button.classList.add("btn-success");
+                    });
+                };
+            });
+        }
     });
 });
