@@ -13,6 +13,10 @@ function game() {
 
     if(board.classList.contains("d-none")) {
         board.classList.remove("d-none");
+
+        // Addind "d-none" to the start button
+
+        document.querySelector("#start").classList.add("d-none");
     };
 
     board.innerHTML = boardButtonsHtml;
