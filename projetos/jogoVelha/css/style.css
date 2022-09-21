@@ -1,0 +1,19 @@
+#board, #reset {
+    margin: auto;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    gap: 5px;
+    width: 450px;
+    height: 450px;
+    margin-top: 15px;
+}
+
+
+#board > button {
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
