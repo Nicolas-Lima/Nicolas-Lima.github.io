@@ -196,9 +196,14 @@ function game() {
     });
 }
 
-// Starting the game
+// Button to start the game
 
-game();
+const btnStart = document.querySelector("#start");
+
+btnStart.addEventListener("click", () => {
+    btnStart.classList.add("d-none");
+    game(); 
+});
 
 // Button to reset the game
 
@@ -206,4 +211,8 @@ const btnReset = document.querySelector("#reset");
 
 btnReset.addEventListener("click", () => {
     game(); 
+
+    const whoPlaysNow = document.querySelector("#whoPlaysNow"); 
+    whoPlaysNow.classList.remove("text-success");
+    whoPlaysNow.classList.add("text-dark");
 });
