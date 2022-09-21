@@ -202,6 +202,10 @@ const btnStart = document.querySelector("#start");
 
 btnStart.addEventListener("click", () => {
     btnStart.classList.add("d-none");
+
+    const btnReset = document.querySelector("#reset");
+    btnReset.classList.remove("d-none");
+    
     game(); 
 });
 
