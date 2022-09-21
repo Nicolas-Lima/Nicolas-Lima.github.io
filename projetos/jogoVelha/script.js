@@ -13,12 +13,6 @@ function game() {
 
     if(board.classList.contains("d-none")) {
         board.classList.remove("d-none");
-
-        const isAGithubPage = window.location.href.includes("github");
-        
-        if(isAGithubPage) {
-            document.querySelector("#start").classList.add("d-none");
-        };
     };
 
     board.innerHTML = boardButtonsHtml;
