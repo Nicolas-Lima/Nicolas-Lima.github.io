@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
 #board, #reset {
     margin: auto;
 }
@@ -15,5 +17,9 @@
 
 #board > button {
     font-size: 50px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#board > button[id*="btn"] {
+    font-size: 64px;    
+    font-family: 'Bungee Spice', cursive;
 }
