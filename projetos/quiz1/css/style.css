@@ -1,0 +1,13 @@
+@media (min-width: 768px) {
+  #board {
+    
+  }
+}
+
+#board {
+  min-width: 50% !important;   
+}
+
+#darkMode:hover {
+  cursor: pointer;
+}
