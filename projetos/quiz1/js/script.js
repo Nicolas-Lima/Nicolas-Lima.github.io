@@ -257,6 +257,8 @@ const btnNext = divActions.querySelector("#nextQuestion");
 const btnPrevious = divActions.querySelector("#previousQuestion");
 
 btnNext.addEventListener("click", () => {
+  disableAnswerButtons();
+  addInvisibleClass("previousQuestion");
   addInvisibleClass("previousQuestion");
   addInvisibleClass("nextQuestion");
   board.style.transform = "scale(0.7)";
@@ -268,6 +270,14 @@ btnNext.addEventListener("click", () => {
   }, 1000);
 });
 btnPrevious.addEventListener("click", previousQuestion);
+
+function disableAnswerButtons() {
+  const btnsAnswers = board.querySelectorAll("#answers > button");
+  btnsAnswers.forEach(btnAnswer => {
+    btnAnswer.setAttribute("disabled", "");
+    btnAnswer.style.opacity = "unset";
+  });
+}
 
 function createAnswer(letter, answer) {
   const divAnswers = board.querySelector("#answers");
@@ -348,6 +358,7 @@ function rightAnswer(letter) {
     }
   });
 
+  disableAnswerButtons();
   addInvisibleClass("previousQuestion");
   addInvisibleClass("nextQuestion");
   board.style.transform = "scale(0.7)";
