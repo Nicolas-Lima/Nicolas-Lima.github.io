@@ -38,7 +38,7 @@ const questions = [
         "mb": 0
       },
       "imageName": "avenue.jpg",
-      "maxWidth": "80%"
+      "maxWidth": "100%"
     }
   },
     {
