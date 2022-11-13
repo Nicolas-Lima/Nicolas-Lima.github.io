@@ -265,8 +265,6 @@ btnNext.addEventListener("click", () => {
 
   setTimeout(() => {
     nextQuestion();
-    removeInvisibleClass("previousQuestion");
-    removeInvisibleClass("nextQuestion");
   }, 1000);
 });
 btnPrevious.addEventListener("click", previousQuestion);
@@ -365,8 +363,6 @@ function rightAnswer(letter) {
 
   setTimeout(() => {
     nextQuestion();
-    removeInvisibleClass("previousQuestion");
-    removeInvisibleClass("nextQuestion");
   }, 1000);
 }
 
@@ -419,6 +415,8 @@ function getCurrentQuestion() {
 }
 
 function nextQuestion() {
+  removeInvisibleClass("previousQuestion");
+  removeInvisibleClass("nextQuestion");
   cleanFields();
   increaseQuestionIndex();
   createQuestion();
