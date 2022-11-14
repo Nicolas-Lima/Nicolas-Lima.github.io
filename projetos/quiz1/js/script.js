@@ -280,8 +280,8 @@ btnNext.addEventListener("click", () => {
 btnPrevious.addEventListener("click", previousQuestion);
 
 function disableAnswerButtons() {
-  const btnsAnswers = board.querySelectorAll("#answers > button");
-  btnsAnswers.forEach(btnAnswer => {
+  const btnsAnswer = getBtnsAnswer();
+  btnsAnswer.forEach(btnAnswer => {
     btnAnswer.setAttribute("disabled", "");
     btnAnswer.style.opacity = "unset";
   });
@@ -341,8 +341,8 @@ function getBtnAnswer(letter) {
   return btnAnswer;
 }
 
-function getBtnsAnswers(letter) {
-  const btnsAnswer = board.querySelector(`button[value="${letter}"]`);
+function getBtnsAnswer(letter) {
+  const btnsAnswer = board.querySelectorAll("#answers > button");
   return btnsAnswer;
 }
 
@@ -368,8 +368,8 @@ function rightAnswer(letter) {
 
   addBtnSuccessClass(btnAnswer);
 
-  const btnsAnswers = board.querySelectorAll("#answers > button");
-  btnsAnswers.forEach(btn => {
+  const btnsAnswer = getBtnsAnswer();
+  btnsAnswer.forEach(btn => {
     const letter = btn.getAttribute("value");
     if(letter !== rightAnswerLetter) {
       addBtnDangerClass(btn);
