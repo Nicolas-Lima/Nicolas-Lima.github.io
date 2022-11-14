@@ -155,6 +155,7 @@ btnDarkMode.addEventListener("click", () => {
 // Creating the question
 
 function createQuestion() {
+  cleanFields();
   const hasImage = board.contains(document.querySelector("#divImage"));
   if(hasImage) removeImage();
 
@@ -192,8 +193,6 @@ function createQuestion() {
     const h1 = createElement("h1");
     h1.innerText = "Parábens! Você chegou ao final do quiz!";
     h1.classList.add("text-success", "text-center");
-    
-    cleanFields();
     divAnswers.appendChild(h1);
   }
 }
@@ -250,6 +249,23 @@ function removeImage() {
   board.removeChild(divImage);
 }
 
+function activeRightAnswerTransition() {
+  disableAnswerButtons();
+  addInvisibleClass("previousQuestion");
+  addInvisibleClass("darkMode");
+  addInvisibleClass("nextQuestion");
+  board.style.transition = "1s";
+  board.style.transform = "scale(0.7)";
+
+  setTimeout(() => {
+    nextQuestion();
+    removeInvisibleClass("previousQuestion");
+    removeInvisibleClass("darkMode");
+    removeInvisibleClass("nextQuestion");
+    setTimeout(() => board.style.transition = "0s", 1250);
+  }, 1000);
+}
+
 // Div actions
 
 const divActions = board.querySelector("#actions");
@@ -258,15 +274,9 @@ const btnPrevious = divActions.querySelector("#previousQuestion");
 
 btnNext.addEventListener("click", () => {
   disableAnswerButtons();
-  addInvisibleClass("previousQuestion");
-  addInvisibleClass("previousQuestion");
-  addInvisibleClass("nextQuestion");
-  board.style.transform = "scale(0.7)";
-
-  setTimeout(() => {
-    nextQuestion();
-  }, 1000);
+  nextQuestion();
 });
+
 btnPrevious.addEventListener("click", previousQuestion);
 
 function disableAnswerButtons() {
@@ -326,6 +336,16 @@ function createAnswer(letter, answer) {
   });
 }
 
+function getBtnAnswer(letter) {
+  const btnAnswer = board.querySelector(`button[value="${letter}"]`);
+  return btnAnswer;
+}
+
+function getBtnsAnswers(letter) {
+  const btnsAnswer = board.querySelector(`button[value="${letter}"]`);
+  return btnsAnswer;
+}
+
 function checkAnswer(letter) {
   const currentQuestion = getCurrentQuestion();
   const {rightAnswerLetter} = currentQuestion;
@@ -341,7 +361,7 @@ function checkAnswer(letter) {
 }
 
 function rightAnswer(letter) {
-  const btnAnswer = board.querySelector(`button[value="${letter}"]`)
+  const btnAnswer = getBtnAnswer(letter);
   const currentQuestion = getCurrentQuestion();
   const {rightAnswerLetter} = currentQuestion;
   questions[currentQuestionIndex.value].rightAnswerClickedBefore = true;
@@ -356,18 +376,11 @@ function rightAnswer(letter) {
     }
   });
 
-  disableAnswerButtons();
-  addInvisibleClass("previousQuestion");
-  addInvisibleClass("nextQuestion");
-  board.style.transform = "scale(0.7)";
-
-  setTimeout(() => {
-    nextQuestion();
-  }, 1000);
+  activeRightAnswerTransition();
 }
 
 function wrongAnswer(letter) {
-  const btnAnswer = board.querySelector(`button[value="${letter}"]`)
+  const btnAnswer = getBtnAnswer(letter);
   addBtnDangerClass(btnAnswer);
 }
 
@@ -415,9 +428,6 @@ function getCurrentQuestion() {
 }
 
 function nextQuestion() {
-  removeInvisibleClass("previousQuestion");
-  removeInvisibleClass("nextQuestion");
-  cleanFields();
   increaseQuestionIndex();
   createQuestion();
 
@@ -431,7 +441,6 @@ function nextQuestion() {
 }
 
 function previousQuestion() {
-  cleanFields();
   decreaseQuestionIndex();
   createQuestion();
   
