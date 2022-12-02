@@ -1,7 +1,7 @@
 const board = document.querySelector("#board");
 
 const currentQuestionIndex = {
-  _value: 0,
+  _value: localStorage.currentQuestionIndex || 0,
   
   get value() {
     return this._value;
@@ -10,10 +10,14 @@ const currentQuestionIndex = {
   set value(_value) {
     if(_value == this._value + 1) {
       this._value++;
+
+      localStorage.currentQuestionIndex = this._value;
     }
     
     else if(_value == this._value - 1) {
       this._value--;
+
+      localStorage.currentQuestionIndex = this._value;
     }
   }
 }
@@ -262,6 +266,7 @@ function activeRightAnswerTransition() {
     removeInvisibleClass("previousQuestion");
     removeInvisibleClass("darkMode");
     removeInvisibleClass("nextQuestion");
+
     setTimeout(() => board.style.transition = "0s", 1250);
   }, 1000);
 }
