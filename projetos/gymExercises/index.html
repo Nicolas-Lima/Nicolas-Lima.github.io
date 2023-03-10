@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap.css" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Exercícios academia</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+          <button class="navbar-toggler mt-3 ms-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-start ps-2" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <div class="btn-group mt-3 me-2" role="group" aria-label="Basic radio toggle button group" id="people">
+                  <input type="radio" class="btn-check person" name="nicolas" id="nicolas" autocomplete="off" checked>
+                  <label class="btn btn-outline-primary" for="nicolas">Nícolas</label>
+                  
+                  <input type="radio" class="btn-check person" name="person2" id="person2" autocomplete="off">
+                  <label class="btn btn-outline-primary" for="person2">Pessoa2</label>
+                </div>
+                <div class="btn-group mt-3" role="group" aria-label="Basic radio toggle button group" id="workouts">
+                    <input type="radio" class="btn-check workout" name="workout1" id="workout1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="workout1">Treino A</label>
+                    
+                    <input type="radio" class="btn-check workout" name="workout2" id="workout2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="workout2">Treino B</label>
+                  </div>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <h2 class="text-center mb-4">Exercícios</h2>
+              <div class="d-flex flex-column" id="exercises">
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+    <button type="button" class="btn btn-primary addExercise">Adicionar exercício</button>
+    <div id="videoContainer" class="d-flex flex-column align-items-center mt-4">
+      <h2 class="mb-5 text-secondary">Vídeo explicativo <span id="videoName" class="text-danger"></span></h2>
+      <video src="" class="col-12 col-sm-10 col-md-8 col-lg-6 p-3 p-md-0 rounded" controls></video>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="bootstrap.js"></script>
+</body>
+</html>
