@@ -199,8 +199,6 @@ function checkAlarmDate(day, hours, minutes, month, year, alarm) {
             const { currentDay, currentHours, currentMinutes, currentMonth, currentYear } = getCurrentDate()
             const alarmIsActivated = alarmElem?.classList.contains('activatedAlarm')
          
-            console.log('APRENDER A USAR O ? ANTES do PONTO (document?.body)')
-
             if(!alarmElem || !alarmIsActivated ) {
                 removeAlarmBellElem()
                 clearInterval(alarmDateInterval)
@@ -222,7 +220,7 @@ function sendAlarmNotification(alarm) {
     try {
         const notificationTitle = alarm.alarmName
         const notificationOptions = {
-            //body: alarm.alarmName,
+            body: alarm.alarmName,
             icon: './imgs/favicon.ico'
         }
         Notification.permission != "granted" ? Notification.requestPermission() : ''
