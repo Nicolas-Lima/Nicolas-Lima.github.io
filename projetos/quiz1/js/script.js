@@ -1,7 +1,7 @@
 const board = document.querySelector("#board");
 
 const currentQuestionIndex = {
-  _value: localStorage.currentQuestionIndex || 0,
+  _value: Number(localStorage.currentQuestionIndex) || 0,
   
   get value() {
     return this._value;
@@ -164,6 +164,12 @@ function createQuestion() {
   if(hasImage) removeImage();
 
   const currentQuestion = getCurrentQuestion();
+
+  if(currentQuestionIndex.value > 0) {
+
+    removeInvisibleClass('previousQuestion');
+
+  }
   
   // Trocar ESTA LOGICA
   
