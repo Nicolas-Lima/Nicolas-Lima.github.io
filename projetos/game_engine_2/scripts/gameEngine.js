@@ -154,7 +154,7 @@ class GameBoard {
                 }
             }
             this.game_board_style = game_board_style
-            this.width = "0px"
+            this.width = "00px"
             this.height = "0px"
             this.id = game_board_id
             this.game_board_element = game_board_element
