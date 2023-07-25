@@ -78,8 +78,8 @@ html[data-theme]:not([data-theme="dark"]) #themeToggler {
 }
 
 @media (max-width: 675px) {
-#themeToggler {
-  bottom: 17px;
-  right: 17px;
-}
+  #themeToggler {
+    bottom: 17px;
+    right: 17px;
+  }
 }
