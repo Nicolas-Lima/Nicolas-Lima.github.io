@@ -22,3 +22,41 @@ dialog > article .close {
   cursor: pointer;
   margin-right: 2px;
 }
+
+html[data-theme]:not([data-theme="dark"]) nav {
+  border-bottom: 1px solid rgba(211, 211, 211, 0.3) !important;
+}
+
+#githubLink,
+#linkedinLink,
+#themeToggler {
+  transform: scale(1.05);
+}
+
+#githubLink:hover,
+#linkedinLink:hover,
+#themeToggler:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+html[data-theme]:not([data-theme="dark"]) #githubLink {
+  color: #24292f !important;
+}
+
+html[data-theme]:not([data-theme="dark"]) #githubLink:hover {
+  color: #47515c !important;
+}
+
+html[data-theme]:not([data-theme="dark"]) #linkedinLink,
+html[data-theme]:not([data-theme="dark"]) #githubLink,
+html[data-theme]:not([data-theme="dark"]) #themeToggler {
+  transform: scale(1.1);
+}
+
+html[data-theme]:not([data-theme="dark"]) #linkedinLink:hover,
+html[data-theme]:not([data-theme="dark"]) #githubLink:hover,
+html[data-theme]:not([data-theme="dark"]) #themeToggler:hover {
+  transform: scale(1.17);
+  cursor: pointer;
+}
