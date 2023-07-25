@@ -1,3 +1,5 @@
+const { useState, useEffect } = React;
+
 function Nav() {
   return (
     <nav className="mb-4 mb-md-0 border-light border-bottom border-opacity-10 d-flex justify-content-around py-1">
@@ -10,8 +12,8 @@ function Nav() {
             aria-label="Menu">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24px"
-              height="24px"
+              width="26px"
+              height="26px"
               fill="currentColor"
               className="bi bi-github"
               viewBox="0 0 16 16">
@@ -34,8 +36,8 @@ function Nav() {
             aria-label="Linkedin">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24px"
-              height="24px"
+              width="26px"
+              height="26px"
               fill="currentColor"
               className="bi bi-linkedin"
               viewBox="0 0 16 16">
@@ -48,46 +50,71 @@ function Nav() {
   );
 }
 
-function Projects() {
+function Projects({ toggleModalLinks }) {
   const reactProjects = [
     {
-      name: "Site do meu TCC ( Em Desenvolvimento )",
+      fullName: "Site do meu TCC ( Em Desenvolvimento )",
+      name: "Site do meu TCC",
       projectUrl: "https://sitetccinfo.netlify.app/",
+      githubUrl: "https://github.com/Nicolas-Lima/site_tcc",
     },
     {
-      name: "Loja de produtos ( Em Desenvolvimento )",
+      fullName: "Loja de produtos ( Em Desenvolvimento )",
+      name: "Loja de produtos",
       projectUrl: "https://a-product-store.netlify.app/",
+      githubUrl: "https://github.com/Nicolas-Lima/product-store",
     },
     {
+      fullName: "Prime Flix",
       name: "Prime Flix",
       projectUrl: "https://rdmetas.000webhostapp.com/",
+      githubUrl:
+        "https://github.com/Nicolas-Lima/Projetos-React-JS/tree/main/Prime%20Flix",
     },
   ];
 
   const javascriptProjects = [
     {
+      fullName: "Clock App",
       name: "Clock App",
       projectUrl: "projetos/clock_app/index.html",
+      githubUrl:
+        "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Clock%20App",
     },
     {
+      fullName: "Primeira Game Engine",
       name: "Primeira Game Engine",
       projectUrl: "projetos/game_engine_1/index.html",
+      githubUrl:
+        "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Game%20Engine%201",
     },
     {
+      fullName: "Segunda Game Engine",
       name: "Segunda Game Engine",
       projectUrl: "projetos/game_engine_2/index.html",
+      githubUrl:
+        "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Game%20Engine%202",
     },
     {
+      fullName: "Jogo da velha",
       name: "Jogo da velha",
       projectUrl: "projetos/jogoVelha/index.html",
+      githubUrl:
+        "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Joguinho%20da%20velha",
     },
     {
+      fullName: "To-do List 1",
       name: "To-do List 1",
       projectUrl: "https://nicolas-listatarefas.herokuapp.com/",
+      githubUrl:
+        "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/To-do%20List%201",
     },
     {
+      fullName: "To-do List 2",
       name: "To-do List 2",
       projectUrl: "projetos/to-do-lists/To-do-List-2/index.html",
+      githubUrl:
+        "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/To-do%20List%202",
     },
   ];
 
@@ -98,8 +125,12 @@ function Projects() {
         {reactProjects.map(project => {
           return (
             <Project
+              projectFullname={project.fullName}
               projectName={project.name}
               projectUrl={project.projectUrl}
+              githubUrl={project.githubUrl}
+              toggleModalLinks={toggleModalLinks}
+              key={project.name}
             />
           );
         })}
@@ -109,8 +140,12 @@ function Projects() {
         {javascriptProjects.map(project => {
           return (
             <Project
+              projectFullname={project.fullName}
               projectName={project.name}
               projectUrl={project.projectUrl}
+              githubUrl={project.githubUrl}
+              toggleModalLinks={toggleModalLinks}
+              key={project.name}
             />
           );
         })}
@@ -119,23 +154,82 @@ function Projects() {
   );
 }
 
-function Project({ projectName, projectUrl }) {
+function Project({
+  projectFullname,
+  projectName,
+  projectUrl,
+  githubUrl = "",
+  toggleModalLinks,
+}) {
   return (
     <div className="col-sm-12 col-md-6 col-lg-4">
       <article className="project">
-        <header className="text-center mb-5">{projectName}</header>
-        <a
-          href={projectUrl}
-          target="_blank"
-          rel="noreferrer"
-          className="col-auto">
-          <button
-            type="button"
-            className="btn btn-outline-primary px-3 py-2 m-2">
-            Acessar
-          </button>
-        </a>
+        <header className="text-center mb-5">{projectFullname}</header>
+        <button
+          type="button"
+          className="btn btn-outline-primary px-3 py-2 m-2"
+          onClick={() =>
+            toggleModalLinks({ projectName, projectUrl, githubUrl })
+          }>
+          Acessar
+        </button>
       </article>
     </div>
+  );
+}
+
+function LinksModal({ toggleModalLinks }) {
+  return (
+    <dialog id="modal-links" className="p-3">
+      <article className="d-flex flex-column align-items-center">
+        <a
+          onClick={toggleModalLinks}
+          aria-label="Close"
+          className="close"></a>
+
+        <h3 id="projectName">Acessar</h3>
+        <div className="d-flex flex-column align-items-center w-100 px-5 py-2">
+          <a
+            target="_blank"
+            className="w-100 d-block text-decoration-none"
+            id="projectUrl">
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="currentColor"
+                className="bi bi-diagram-3-fill ms-2"
+                style={{ marginRight: "0.7em" }}
+                viewBox="0 0 16 16">
+                <path
+                  fillRule="evenodd"
+                  d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5v-1zm-6 8A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5v-1zm6 0A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5v-1zm6 0a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1z"
+                />
+              </svg>
+              <span>Site do projeto</span>
+            </button>
+          </a>
+
+          <a
+            className="w-100 d-block text-decoration-none"
+            id="githubUrl"
+            target="_blank">
+            <button className="secondary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="currentColor"
+                className="bi bi-github mx-2"
+                viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+              </svg>
+              <span>Repositório no Github</span>
+            </button>
+          </a>
+        </div>
+      </article>
+    </dialog>
   );
 }
