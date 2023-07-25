@@ -28,14 +28,13 @@ html[data-theme]:not([data-theme="dark"]) nav {
 }
 
 #githubLink,
-#linkedinLink,
-#themeToggler {
+#linkedinLink {
   transform: scale(1.05);
 }
 
 #githubLink:hover,
-#linkedinLink:hover,
-#themeToggler:hover {
+#linkedinLink:hover {
+  transition: all 0.1s;
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -49,14 +48,38 @@ html[data-theme]:not([data-theme="dark"]) #githubLink:hover {
 }
 
 html[data-theme]:not([data-theme="dark"]) #linkedinLink,
-html[data-theme]:not([data-theme="dark"]) #githubLink,
-html[data-theme]:not([data-theme="dark"]) #themeToggler {
+html[data-theme]:not([data-theme="dark"]) #githubLink {
   transform: scale(1.1);
 }
 
 html[data-theme]:not([data-theme="dark"]) #linkedinLink:hover,
-html[data-theme]:not([data-theme="dark"]) #githubLink:hover,
-html[data-theme]:not([data-theme="dark"]) #themeToggler:hover {
+html[data-theme]:not([data-theme="dark"]) #githubLink:hover {
   transform: scale(1.17);
   cursor: pointer;
+}
+
+#themeToggler {
+  position: fixed;
+  bottom: 35px;
+  right: 25px;
+  z-index: 9999;
+  background-color: #2f2f2f !important;
+  padding: 0.5em 0.6em;
+}
+
+#themeToggler:hover {
+  transition: all 0.15s;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+html[data-theme]:not([data-theme="dark"]) #themeToggler {
+  background-color: #d6d6de !important;
+}
+
+@media (max-width: 675px) {
+#themeToggler {
+  bottom: 17px;
+  right: 17px;
+}
 }
