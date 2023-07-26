@@ -27,6 +27,8 @@ html[data-theme]:not([data-theme="dark"]) nav {
   border-bottom: 1px solid rgba(211, 211, 211, 0.3) !important;
 }
 
+/* Icons */
+
 #githubLink,
 #linkedinLink {
   transform: scale(1.05);
@@ -58,6 +60,20 @@ html[data-theme]:not([data-theme="dark"]) #githubLink:hover {
   cursor: pointer;
 }
 
+.mailIcon-container:hover {
+  cursor: pointer !important;
+}
+
+.mailIcon-container {
+  border-bottom: unset !important;
+}
+
+.mailIcon-container:hover * {
+  opacity: 90%;
+}
+
+/* Theme toggler */
+
 #themeToggler {
   position: fixed;
   bottom: 35px;
@@ -82,4 +98,41 @@ html[data-theme]:not([data-theme="dark"]) #themeToggler {
     bottom: 17px;
     right: 17px;
   }
+}
+
+.mt-2-3rem {
+  margin-top: 2.3rem !important;
+}
+
+.text-light-blue {
+  color: #3b7f99;
+}
+
+.text-hover-light-blue:hover {
+  color: #3b7f99 !important;
+}
+
+.text-light-green {
+  color: #54b689;
+}
+
+.link-without-formatting {
+  text-decoration: unset;
+}
+
+.skillLevel {
+  display: block;
+  max-width: 275px;
+}
+
+.grid > div {
+  border: unset !important; 
+}
+
+.grid > div:hover {
+  cursor: all-scroll;
+}
+
+.cursor-hover-pointer {
+  cursor: pointer;
 }
