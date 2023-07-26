@@ -104,6 +104,10 @@ html[data-theme]:not([data-theme="dark"]) #themeToggler {
   margin-top: 2.3rem !important;
 }
 
+.mb-2-3rem {
+  margin-bottom: 3rem !important;
+}
+
 .text-light-blue {
   color: #3b7f99;
 }
@@ -126,13 +130,22 @@ html[data-theme]:not([data-theme="dark"]) #themeToggler {
 }
 
 .grid > div {
-  border: unset !important; 
-}
-
-.grid > div:hover {
-  cursor: all-scroll;
+  border: unset !important;
 }
 
 .cursor-hover-pointer {
   cursor: pointer;
 }
+
+.category .category-title-container {
+  font-size: 1.5rem;
+  padding-left: 10px !important;
+  line-height: 30px;
+  box-shadow: -5px 0 0 0 #54768e;
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  margin-bottom: 2rem !important;
+  font-weight: 700 !important;
+}
+
