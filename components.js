@@ -18,7 +18,7 @@ function Skills() {
               <progress
                 value="2"
                 max="3"
-                className="skillLevel  mt-2"></progress>
+                className="skillLevel mt-2"></progress>
             </div>
             <div className="mb-3 mb-lg-0" data-tooltip="Iniciante">
               <div className="d-flex align-items-center">
@@ -45,7 +45,9 @@ function Skills() {
           </div>
         </div>
         <div className="category mt-2-3rem">
-          <h3 className="text-light-blue category-title">Front-end Frameworks</h3>
+          <h3 className="text-light-blue category-title">
+            Front-end Frameworks
+          </h3>
 
           <div className="grid">
             <div className="mb-3 mb-lg-0" data-tooltip="Intermediário">
@@ -173,13 +175,20 @@ function About() {
           <span className="me-2">👋🏼</span> Olá, seja bem vindo ao meu
           portfólio!
         </div>
-        <div>
-          Sou um desenvolvedor apaixonado pelo que faço e, nos últimos 7
-          meses, tenho me dedicado intensamente a aprimorar minhas
-          habilidades, com foco especial em{" "}
-          <span className="text-light-green">React JS</span> e{" "}
-          aprofundamento em{" "}
-          <span className="text-light-green">JavaScript</span>.
+
+        <div className="aboutText">
+          Sou uma pessoa apaixonada por programação com foco em
+          desenvolvimento web e atualmente estou focado em aprimorar minhas
+          habilidades como{" "}
+          <span className="text-light-green">Desenvolvedor Front-End</span>
+          , com especial interesse na tecnologia{" "}
+          <span className="text-light-green">React JS</span>. Estou sempre
+          em busca de aprimorar minhas habilidades e trabalhar em projetos
+          desafiadores. Há um ano, tenho me dedicado também ao estudo de
+          tecnologias modernas como{" "}
+          <span className="text-light-green">Javascript</span>,{" "}
+          <span className="text-light-green">SQL</span> e{" "}
+          <span className="text-light-green">GIT</span>.
         </div>
 
         <div className="mt-3">
@@ -198,15 +207,33 @@ function About() {
           que desenvolvi.
         </div>
       </div>
-      <div
-        className="mt-3 mailIcon-container w-auto d-inline-block"
-        data-tooltip={mailIconContainerTooltip}
-        onMouseLeave={() => setMailIconContainerTooltip("Copiar e-mail")}
-        onClick={copyEmailToClipboard}>
-        <MailIcon />
-        <span className="ms-2 email">
-          {email}
-        </span>
+      <div id="links">
+        <div
+          className="mt-3 mailIcon-container w-auto d-inline-block"
+          data-tooltip={mailIconContainerTooltip}
+          onMouseLeave={() => setMailIconContainerTooltip("Copiar e-mail")}
+          onClick={copyEmailToClipboard}>
+          <MailIcon />
+          <span className="ms-2 email">{email}</span>
+        </div>
+        <div className="mt-3 d-flex align-items-center link-info">
+          <a
+            href="https://www.linkedin.com/in/n%C3%ADcolaslima/"
+            target="_blank"
+            className="remove-focus-background shadow-none bg-transparent">
+            <LinkedinIcon />
+            <span className="ms-2">Linkedin</span>
+          </a>
+        </div>
+        <div className="mt-3 d-flex align-items-center link-light">
+          <a
+            href="https://github.com/nicolas-lima"
+            className="link-light remove-focus-background shadow-none bg-transparent"
+            target="_blank">
+            <GithubIcon />
+            <span className="ms-2">Github</span>
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -331,7 +358,9 @@ function Projects({ toggleModalLinks }) {
       {projects.map(technology => {
         return (
           <div className="row mb-4" key={technology.technology}>
-            <h1 className="mb-3">{technology.technology}</h1>
+            <h1 className="mb-3 technologyTitle">
+              {technology.technology}
+            </h1>
             {technology.projects.map(project => {
               return (
                 <Project

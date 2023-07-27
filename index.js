@@ -55,6 +55,7 @@ function App() {
           <About />
           <Skills />
           <Projects toggleModalLinks={toggleModalLinks} />
+
           <LinksModal toggleModalLinks={toggleModalLinks} />
           {/* <ThemeToggler /> */}
         </div>

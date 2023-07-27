@@ -140,7 +140,7 @@ html[data-theme]:not([data-theme="dark"]) #themeToggler {
 .category .category-title {
   padding-left: 12.5px !important;
   line-height: 30px;
-  margin-bottom: 2.20em;
+  margin-bottom: 2.2em;
   box-shadow: -5px 0 0 0 #2f2f2f;
   font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
     "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji",
@@ -148,3 +148,14 @@ html[data-theme]:not([data-theme="dark"]) #themeToggler {
   font-weight: 700 !important;
 }
 
+.aboutText {
+  font-weight: 370;
+}
+
+.technologyTitle {
+  padding-left: 15px !important;
+  margin-left: 14px !important;
+  line-height: 36px;
+
+  box-shadow: -5px 0 0 0 #272e37;
+}
