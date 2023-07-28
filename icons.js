@@ -313,3 +313,13 @@ function BalloonIcon() {
     </svg>
   );
 }
+
+function PhpIcon() {
+  return (
+    <img
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg"
+      width="30px"
+      height="30px"
+    />
+  );
+}

@@ -114,6 +114,16 @@ function Skills() {
             </div>
             <div className="mb-3 mb-lg-0" data-tooltip="Iniciante">
               <div className="d-flex align-items-center">
+                <PhpIcon />
+                <span className="ms-2">PHP</span>
+              </div>
+              <progress
+                value="1"
+                max="3"
+                className="skillLevel  mt-2"></progress>
+            </div>
+            <div className="mb-3 mb-lg-0" data-tooltip="Iniciante">
+              <div className="d-flex align-items-center">
                 <NodeJSIcon />
                 <span className="ms-2">Node JS</span>
               </div>
@@ -121,9 +131,6 @@ function Skills() {
                 value="1"
                 max="3"
                 className="skillLevel  mt-2"></progress>
-            </div>
-            <div>
-              <div className="d-flex align-items-center"></div>
             </div>
           </div>
         </div>
@@ -359,7 +366,7 @@ function Projects({ toggleModalLinks }) {
         return (
           <div className="row mb-4" key={technology.technology}>
             <h1 className="mb-3 technologyTitle">
-              {technology.technology}
+              <span className="me-1 fs-3 text-dark">⚆</span> {technology.technology}
             </h1>
             {technology.projects.map(project => {
               return (

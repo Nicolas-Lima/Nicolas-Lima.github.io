@@ -108,9 +108,15 @@ html[data-theme]:not([data-theme="dark"]) #themeToggler {
   margin-bottom: 3rem !important;
 }
 
+.text-gray {
+  color: #717b7e !important;
+}
+
+
 .text-light-blue {
   color: #3b7f99;
 }
+
 
 .text-hover-light-blue:hover {
   color: #3b7f99 !important;
@@ -123,6 +129,7 @@ html[data-theme]:not([data-theme="dark"]) #themeToggler {
 .link-without-formatting {
   text-decoration: unset;
 }
+
 
 .skillLevel {
   display: block;
@@ -152,10 +159,10 @@ html[data-theme]:not([data-theme="dark"]) #themeToggler {
   font-weight: 370;
 }
 
-.technologyTitle {
+/* .technologyTitle {
   padding-left: 15px !important;
   margin-left: 14px !important;
   line-height: 36px;
 
   box-shadow: -5px 0 0 0 #272e37;
-}
+} */
