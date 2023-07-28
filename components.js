@@ -33,7 +33,7 @@ function Skills() {
             </div>
             <div className="mb-3 mb-lg-0" data-tooltip="Intermediário">
               <div className="d-flex align-items-center">
-                <JsIcon />
+                <JavascriptIcon />
                 <span className="ms-2">Javascript</span>
               </div>
 
@@ -286,6 +286,7 @@ function Projects({ toggleModalLinks }) {
   const projects = [
     {
       technology: "React JS",
+      technologyIcon: <ReactIcon />,
       projects: [
         {
           fullName: "Site do meu TCC ( Em Desenvolvimento )",
@@ -309,7 +310,8 @@ function Projects({ toggleModalLinks }) {
       ],
     },
     {
-      technology: "Javascript Vanilla",
+      technology: "Javascript",
+      technologyIcon: <JavascriptIcon />,
       projects: [
         {
           fullName: "Clock App",
@@ -365,9 +367,11 @@ function Projects({ toggleModalLinks }) {
       {projects.map(technology => {
         return (
           <div className="row mb-4" key={technology.technology}>
-            <h1 className="mb-3 technologyTitle">
-              <span className="me-1 fs-3 text-dark">⚆</span> {technology.technology}
+            <h1 className="mb-3 technologyTitle text-center text-md-start">
+              <span className="technologyIcon me-3">{technology.technologyIcon}</span>
+              {technology.technology}
             </h1>
+
             {technology.projects.map(project => {
               return (
                 <Project

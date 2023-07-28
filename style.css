@@ -112,11 +112,9 @@ html[data-theme]:not([data-theme="dark"]) #themeToggler {
   color: #717b7e !important;
 }
 
-
 .text-light-blue {
   color: #3b7f99;
 }
-
 
 .text-hover-light-blue:hover {
   color: #3b7f99 !important;
@@ -129,7 +127,6 @@ html[data-theme]:not([data-theme="dark"]) #themeToggler {
 .link-without-formatting {
   text-decoration: unset;
 }
-
 
 .skillLevel {
   display: block;
@@ -166,3 +163,8 @@ html[data-theme]:not([data-theme="dark"]) #themeToggler {
 
   box-shadow: -5px 0 0 0 #272e37;
 } */
+
+.technologyIcon svg {
+  width: 38px;
+  height: 38px;
+}
