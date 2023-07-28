@@ -76,30 +76,6 @@ function Skills() {
           </div>
         </div>
         <div className="category mt-2-3rem">
-          <h3 className="text-light-blue category-title">Databases</h3>
-
-          <div className="grid">
-            <div className="mb-3 mb-lg-0" data-tooltip="Intermediário">
-              <div className="d-flex align-items-center">
-                <MySqlIcon />
-                <span className="ms-2">
-                  MySql ( <strong>SQL</strong> )
-                </span>
-              </div>
-              <progress
-                value="2"
-                max="3"
-                className="skillLevel  mt-2"></progress>
-            </div>
-            <div>
-              <div className="d-flex align-items-center"></div>
-            </div>
-            <div>
-              <div className="d-flex align-items-center"></div>
-            </div>
-          </div>
-        </div>
-        <div className="category mt-2-3rem">
           <h3 className="text-light-blue category-title">Back-end</h3>
           <div className="grid">
             <div className="mb-3 mb-lg-0" data-tooltip="Iniciante">
@@ -134,6 +110,31 @@ function Skills() {
             </div>
           </div>
         </div>
+        <div className="category mt-2-3rem">
+          <h3 className="text-light-blue category-title">Databases</h3>
+
+          <div className="grid">
+            <div className="mb-3 mb-lg-0" data-tooltip="Intermediário">
+              <div className="d-flex align-items-center">
+                <MySqlIcon />
+                <span className="ms-2">
+                  MySql ( <strong>SQL</strong> )
+                </span>
+              </div>
+              <progress
+                value="2"
+                max="3"
+                className="skillLevel  mt-2"></progress>
+            </div>
+            <div>
+              <div className="d-flex align-items-center"></div>
+            </div>
+            <div>
+              <div className="d-flex align-items-center"></div>
+            </div>
+          </div>
+        </div>
+
         <div className="category mt-2-3rem">
           <h3 className="text-light-blue category-title">Tools</h3>
           <div className="grid">
@@ -368,7 +369,9 @@ function Projects({ toggleModalLinks }) {
         return (
           <div className="row mb-4" key={technology.technology}>
             <h1 className="mb-3 technologyTitle text-center text-md-start">
-              <span className="technologyIcon me-3">{technology.technologyIcon}</span>
+              <span className="technologyIcon me-3">
+                {technology.technologyIcon}
+              </span>
               {technology.technology}
             </h1>
 
