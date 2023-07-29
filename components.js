@@ -129,9 +129,7 @@ function Skills() {
             <div className="mb-3 mb-lg-0" data-tooltip="Iniciante">
               <div className="d-flex align-items-center">
                 <FirebaseIcon />
-                <span className="ms-2">
-                  Firebase
-                </span>
+                <span className="ms-2">Firebase</span>
               </div>
               <progress
                 value="1"
@@ -299,20 +297,38 @@ function Projects({ toggleModalLinks }) {
       technologyIcon: <ReactIcon />,
       projects: [
         {
-          fullName: "Site do meu TCC ( Em Desenvolvimento )",
+          fullName: "Site do meu TCC",
+          usedTechnologies: [
+            <ReactIcon />,
+            <BootstrapIcon />,
+            <FirebaseIcon />,
+          ],
+          inDevelopment: true,
           name: "Site do meu TCC",
           projectUrl: "https://sitetccinfo.netlify.app/",
           githubUrl: "https://github.com/Nicolas-Lima/site_tcc",
         },
         {
-          fullName: "Loja de produtos ( Em Desenvolvimento )",
+          fullName: "Loja de produtos",
+          usedTechnologies: [
+            <ReactIcon />,
+            <BootstrapIcon />,
+            <FirebaseIcon />,
+          ],
+          inDevelopment: true,
           name: "Loja de produtos",
           projectUrl: "https://a-product-store.netlify.app/",
           githubUrl: "https://github.com/Nicolas-Lima/product-store",
         },
         {
           fullName: "Prime Flix",
+
           name: "Prime Flix",
+          usedTechnologies: [
+            <ReactIcon />,
+            <BootstrapIcon />,
+            <FirebaseIcon />,
+          ],
           projectUrl: "https://rdmetas.000webhostapp.com/",
           githubUrl:
             "https://github.com/Nicolas-Lima/Projetos-React-JS/tree/main/Prime%20Flix",
@@ -326,6 +342,7 @@ function Projects({ toggleModalLinks }) {
         {
           fullName: "Clock App",
           name: "Clock App",
+          usedTechnologies: [<JavascriptIcon />, <BootstrapIcon />],
           projectUrl: "projetos/clock_app/index.html",
           githubUrl:
             "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Clock%20App",
@@ -333,6 +350,7 @@ function Projects({ toggleModalLinks }) {
         {
           fullName: "Primeira Game Engine",
           name: "Primeira Game Engine",
+          usedTechnologies: [<JavascriptIcon />, <CssIcon />],
           projectUrl: "projetos/game_engine_1/index.html",
           githubUrl:
             "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Game%20Engine%201",
@@ -340,6 +358,7 @@ function Projects({ toggleModalLinks }) {
         {
           fullName: "Segunda Game Engine",
           name: "Segunda Game Engine",
+          usedTechnologies: [<JavascriptIcon />, <CssIcon />],
           projectUrl: "projetos/game_engine_2/index.html",
           githubUrl:
             "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Game%20Engine%202",
@@ -347,6 +366,7 @@ function Projects({ toggleModalLinks }) {
         {
           fullName: "Jogo da velha",
           name: "Jogo da velha",
+          usedTechnologies: [<JavascriptIcon />, <BootstrapIcon />],
           projectUrl: "projetos/jogoVelha/index.html",
           githubUrl:
             "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Joguinho%20da%20velha",
@@ -354,16 +374,18 @@ function Projects({ toggleModalLinks }) {
         {
           fullName: "To-do List 1",
           name: "To-do List 1",
+          usedTechnologies: [<NodeJSIcon />, <JavascriptIcon />],
           projectUrl: "https://nicolas-listatarefas.herokuapp.com/",
           githubUrl:
-            "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/To-do%20List%201",
+            "https://github.com/Nicolas-Lima/Projetos-Node-JS/tree/main/listaTarefas",
         },
         {
           fullName: "To-do List 2",
           name: "To-do List 2",
+          usedTechnologies: [<JavascriptIcon />, <CssIcon />],
           projectUrl: "projetos/to-do-lists/To-do-List-2/index.html",
           githubUrl:
-            "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/To-do%20List%202",
+            "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/To-do%20List%201",
         },
       ],
     },
@@ -376,17 +398,19 @@ function Projects({ toggleModalLinks }) {
       </article>
       {projects.map(technology => {
         return (
-          <div className="row mb-4" key={technology.technology}>
-            <h1 className="mb-3 technologyTitle text-center text-md-start">
+          <div className="row mb-0" key={technology.technology}>
+            {/* <h1 className="mb-3 technologyTitle text-center text-md-start">
               <span className="technologyIcon me-3">
                 {technology.technologyIcon}
               </span>
               {technology.technology}
-            </h1>
+            </h1> */}
 
             {technology.projects.map(project => {
               return (
                 <Project
+                  inDevelopment={project.inDevelopment}
+                  usedTechnologies={project.usedTechnologies}
                   projectFullname={project.fullName}
                   projectName={project.name}
                   projectUrl={project.projectUrl}
@@ -404,24 +428,66 @@ function Projects({ toggleModalLinks }) {
 }
 
 function Project({
+  inDevelopment = false,
   projectFullname,
   projectName,
   projectUrl,
   githubUrl = "",
   toggleModalLinks,
+  usedTechnologies,
 }) {
+  const UsedTechnologies = ({
+    className = "mt-4",
+    usedTechnologies = [],
+  }) => {
+    return (
+      <>
+        {usedTechnologies && (
+          <div className={`usedTechnologies ${className}`}>
+            <div className="d-flex justify-content-center align-items-center">
+              {usedTechnologies.map(usedTechnology => {
+                return (
+                  <div className="usedTechnology">{usedTechnology}</div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </>
+    );
+  };
+  const SubmitButton = () => {
+    return (
+      <button
+        type="button"
+        className="btn btn-outline-primary px-3 py-2 m-2 mt-4"
+        onClick={() =>
+          toggleModalLinks({ projectName, projectUrl, githubUrl })
+        }>
+        Acessar
+      </button>
+    );
+  };
+
   return (
     <div className="col-sm-12 col-md-6 col-lg-4">
       <article className="project">
-        <header className="text-center mb-5">{projectFullname}</header>
-        <button
-          type="button"
-          className="btn btn-outline-primary px-3 py-2 m-2"
-          onClick={() =>
-            toggleModalLinks({ projectName, projectUrl, githubUrl })
-          }>
-          Acessar
-        </button>
+        {inDevelopment ? (
+          <header
+            className="d-flex justify-content-center align-items-center inDevelopment"
+            data-tooltip="Em desenvolvimento">
+            {projectFullname}
+
+            <span>
+              <HammerIcon />
+            </span>
+          </header>
+        ) : (
+          <header className="text-center">{projectFullname}</header>
+        )}
+
+        <SubmitButton />
+        <UsedTechnologies usedTechnologies={usedTechnologies} />
       </article>
     </div>
   );
@@ -434,7 +500,10 @@ function LinksModal({ toggleModalLinks }) {
         <a
           onClick={toggleModalLinks}
           aria-label="Close"
-          className="close"></a>
+          className="close" style={{
+            transform: "scale(1.4)",
+            marginRight: "5px",
+          }}></a>
 
         <h3 id="projectName">Acessar</h3>
         <div className="d-flex flex-column align-items-center w-100 px-5 py-2">
