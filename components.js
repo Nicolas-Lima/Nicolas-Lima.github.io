@@ -126,8 +126,17 @@ function Skills() {
                 max="3"
                 className="skillLevel  mt-2"></progress>
             </div>
-            <div>
-              <div className="d-flex align-items-center"></div>
+            <div className="mb-3 mb-lg-0" data-tooltip="Iniciante">
+              <div className="d-flex align-items-center">
+                <FirebaseIcon />
+                <span className="ms-2">
+                  Firebase
+                </span>
+              </div>
+              <progress
+                value="1"
+                max="3"
+                className="skillLevel  mt-2"></progress>
             </div>
             <div>
               <div className="d-flex align-items-center"></div>
