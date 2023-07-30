@@ -7,6 +7,26 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
 html,
 body {
   width: 100%;
@@ -217,4 +237,11 @@ html[data-theme]:not([data-theme="dark"]) #themeToggler {
 
 .selectTechnology label:hover {
   cursor: default !important;
+}
+
+.fade-in {
+  animation: fadeIn 600ms ease;
+}
+.fade-out {
+  animation: fadeOut 300ms ease;
 }

@@ -1,5 +1,3 @@
-const { useState, useEffect } = React;
-
 function Skills() {
   return (
     <div className="mb-3 mt-5" id="skills">
@@ -297,6 +295,7 @@ function Projects({ toggleModalLinks }) {
       technologyIcon: <ReactIcon />,
       projects: [
         {
+          technologyName: "React JS",
           fullName: "Site do meu TCC",
           usedTechnologies: [
             <ReactIcon />,
@@ -309,6 +308,7 @@ function Projects({ toggleModalLinks }) {
           githubUrl: "https://github.com/Nicolas-Lima/site_tcc",
         },
         {
+          technologyName: "React JS",
           fullName: "Loja de produtos",
           usedTechnologies: [
             <ReactIcon />,
@@ -321,6 +321,7 @@ function Projects({ toggleModalLinks }) {
           githubUrl: "https://github.com/Nicolas-Lima/product-store",
         },
         {
+          technologyName: "React JS",
           fullName: "Prime Flix",
 
           name: "Prime Flix",
@@ -340,6 +341,7 @@ function Projects({ toggleModalLinks }) {
       technologyIcon: <JavascriptIcon />,
       projects: [
         {
+          technologyName: "Javascript",
           fullName: "Clock App",
           name: "Clock App",
           usedTechnologies: [<JavascriptIcon />, <BootstrapIcon />],
@@ -348,6 +350,7 @@ function Projects({ toggleModalLinks }) {
             "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Clock%20App",
         },
         {
+          technologyName: "Javascript",
           fullName: "Primeira Game Engine",
           name: "Primeira Game Engine",
           usedTechnologies: [<JavascriptIcon />, <CssIcon />],
@@ -356,6 +359,7 @@ function Projects({ toggleModalLinks }) {
             "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Game%20Engine%201",
         },
         {
+          technologyName: "Javascript",
           fullName: "Segunda Game Engine",
           name: "Segunda Game Engine",
           usedTechnologies: [<JavascriptIcon />, <CssIcon />],
@@ -364,6 +368,7 @@ function Projects({ toggleModalLinks }) {
             "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Game%20Engine%202",
         },
         {
+          technologyName: "Javascript",
           fullName: "Jogo da velha",
           name: "Jogo da velha",
           usedTechnologies: [<JavascriptIcon />, <BootstrapIcon />],
@@ -372,6 +377,7 @@ function Projects({ toggleModalLinks }) {
             "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Joguinho%20da%20velha",
         },
         {
+          technologyName: "Javascript",
           fullName: "To-do List 1",
           name: "To-do List 1",
           usedTechnologies: [<JavascriptIcon />, <CssIcon />],
@@ -386,6 +392,7 @@ function Projects({ toggleModalLinks }) {
       technologyIcon: <NodeJSIcon />,
       projects: [
         {
+          technologyName: "Node JS",
           fullName: "To-do List 2",
           name: "To-do List 2",
           usedTechnologies: [<NodeJSIcon />, <JavascriptIcon />],
@@ -415,8 +422,19 @@ function Projects({ toggleModalLinks }) {
     setSelectedTechnology(e.target.value);
     const selectedTechnology = e.target.value;
 
+    const renderedProjects = document.body.querySelectorAll(
+      "#projects .project"
+    );
+
     if (selectedTechnology === "allTechnologies") {
-      setAllProjects(getAllProjects());
+      renderedProjects.forEach(project => {
+        project.classList.add("fade-out");
+        setTimeout(() => {
+          project.classList.remove("fade-out");
+          setAllProjects(getAllProjects());
+        }, 200);
+      });
+
       return;
     }
 
@@ -424,9 +442,15 @@ function Projects({ toggleModalLinks }) {
       technology => technology.technology === selectedTechnology
     )[0]?.projects;
 
-    if (selectedTechnologyProjects) {
-      setAllProjects(selectedTechnologyProjects);
-    }
+    renderedProjects.forEach(project => {
+      project.classList.add("fade-out");
+      setTimeout(() => {
+        project.classList.remove("fade-out");
+        if (selectedTechnologyProjects) {
+          setAllProjects(selectedTechnologyProjects);
+        }
+      }, 200);
+    });
   };
 
   return (
@@ -464,6 +488,8 @@ function Projects({ toggleModalLinks }) {
             return (
               <Project
                 inDevelopment={project.inDevelopment}
+                selectedTechnology={selectedTechnology}
+                technologyName={project.technologyName}
                 usedTechnologies={project.usedTechnologies}
                 projectFullname={project.fullName}
                 projectName={project.name}
@@ -502,6 +528,8 @@ function Projects({ toggleModalLinks }) {
 
 function Project({
   inDevelopment = false,
+  selectedTechnology,
+  technologyName,
   projectFullname,
   projectName,
   projectUrl,
@@ -547,8 +575,13 @@ function Project({
   };
 
   return (
-    <div className="col-sm-12 col-md-6 col-lg-4">
-      <article className="project">
+    <div
+      className={`col-sm-12 col-md-6 col-lg-4 ${
+        (selectedTechnology === technologyName ||
+          selectedTechnology === "allTechnologies") &&
+        "fade-in"
+      }`}>
+      <article className={`project`}>
         {inDevelopment ? (
           <header
             className="d-flex justify-content-center align-items-center inDevelopment"
