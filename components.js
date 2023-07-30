@@ -291,6 +291,7 @@ function Nav() {
 }
 
 function Projects({ toggleModalLinks }) {
+  // projects > projects
   const projects = [
     {
       technology: "React JS",
@@ -374,14 +375,6 @@ function Projects({ toggleModalLinks }) {
         {
           fullName: "To-do List 1",
           name: "To-do List 1",
-          usedTechnologies: [<NodeJSIcon />, <JavascriptIcon />],
-          projectUrl: "https://nicolas-listatarefas.herokuapp.com/",
-          githubUrl:
-            "https://github.com/Nicolas-Lima/Projetos-Node-JS/tree/main/listaTarefas",
-        },
-        {
-          fullName: "To-do List 2",
-          name: "To-do List 2",
           usedTechnologies: [<JavascriptIcon />, <CssIcon />],
           projectUrl: "projetos/to-do-lists/To-do-List-2/index.html",
           githubUrl:
@@ -389,23 +382,51 @@ function Projects({ toggleModalLinks }) {
         },
       ],
     },
+    {
+      technology: "Node JS",
+      technologyIcon: <NodeJSIcon />,
+      projects: [
+        {
+          fullName: "To-do List 2",
+          name: "To-do List 2",
+          usedTechnologies: [<NodeJSIcon />, <JavascriptIcon />],
+          projectUrl: "https://nicolas-listatarefas.herokuapp.com/",
+          githubUrl:
+            "https://github.com/Nicolas-Lima/Projetos-Node-JS/tree/main/listaTarefas",
+        },
+      ],
+    },
   ];
+
+  const allProjects = projects.reduce(
+    (allProjects, technology) => [...allProjects, ...technology.projects],
+    []
+  );
 
   return (
     <div className="mb-3 mt-4 mt-md-5" id="projects">
       <article className="mb-4 p-3 d-flex justify-content-center align-items-center m-0 border border-light border-opacity-10">
         <h1 className="m-0">Projetos</h1>
       </article>
-      {projects.map(technology => {
+      <div className="row mb-0">
+        {allProjects.map(project => {
+          return (
+            <Project
+              inDevelopment={project.inDevelopment}
+              usedTechnologies={project.usedTechnologies}
+              projectFullname={project.fullName}
+              projectName={project.name}
+              projectUrl={project.projectUrl}
+              githubUrl={project.githubUrl}
+              toggleModalLinks={toggleModalLinks}
+              key={project.name}
+            />
+          );
+        })}
+      </div>
+      {/* {projects.map(technology => {
         return (
           <div className="row mb-0" key={technology.technology}>
-            {/* <h1 className="mb-3 technologyTitle text-center text-md-start">
-              <span className="technologyIcon me-3">
-                {technology.technologyIcon}
-              </span>
-              {technology.technology}
-            </h1> */}
-
             {technology.projects.map(project => {
               return (
                 <Project
@@ -422,7 +443,7 @@ function Projects({ toggleModalLinks }) {
             })}
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 }
@@ -445,9 +466,13 @@ function Project({
         {usedTechnologies && (
           <div className={`usedTechnologies ${className}`}>
             <div className="d-flex justify-content-center align-items-center">
-              {usedTechnologies.map(usedTechnology => {
+              {usedTechnologies.map((usedTechnology, index) => {
                 return (
-                  <div className="usedTechnology">{usedTechnology}</div>
+                  <div
+                    className="usedTechnology"
+                    key={`usedTechnology-${projectFullname}-${index}`}>
+                    {usedTechnology}
+                  </div>
                 );
               })}
             </div>
@@ -500,7 +525,8 @@ function LinksModal({ toggleModalLinks }) {
         <a
           onClick={toggleModalLinks}
           aria-label="Close"
-          className="close" style={{
+          className="close"
+          style={{
             transform: "scale(1.4)",
             marginRight: "5px",
           }}></a>
