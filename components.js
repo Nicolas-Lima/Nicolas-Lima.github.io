@@ -291,7 +291,6 @@ function Nav() {
 }
 
 function Projects({ toggleModalLinks }) {
-  // projects > projects
   const projects = [
     {
       technology: "React JS",
@@ -398,31 +397,84 @@ function Projects({ toggleModalLinks }) {
     },
   ];
 
-  const allProjects = projects.reduce(
-    (allProjects, technology) => [...allProjects, ...technology.projects],
-    []
-  );
+  const getAllProjects = () => {
+    return projects.reduce(
+      (allProjects, technology) => [
+        ...allProjects,
+        ...technology.projects,
+      ],
+      []
+    );
+  };
+
+  const [selectedTechnology, setSelectedTechnology] =
+    useState("allTechnologies");
+  const [allProjects, setAllProjects] = useState(getAllProjects());
+
+  const handleSelectTechnology = e => {
+    setSelectedTechnology(e.target.value);
+    const selectedTechnology = e.target.value;
+
+    if (selectedTechnology === "allTechnologies") {
+      setAllProjects(getAllProjects());
+      return;
+    }
+
+    const selectedTechnologyProjects = projects.filter(
+      technology => technology.technology === selectedTechnology
+    )[0]?.projects;
+
+    if (selectedTechnologyProjects) {
+      setAllProjects(selectedTechnologyProjects);
+    }
+  };
 
   return (
     <div className="mb-3 mt-4 mt-md-5" id="projects">
-      <article className="mb-4 p-3 d-flex justify-content-center align-items-center m-0 border border-light border-opacity-10">
+      <article className="p-3 d-flex justify-content-center align-items-center m-0 border border-light border-opacity-10">
         <h1 className="m-0">Projetos</h1>
       </article>
-      <div className="row mb-0">
-        {allProjects.map(project => {
-          return (
-            <Project
-              inDevelopment={project.inDevelopment}
-              usedTechnologies={project.usedTechnologies}
-              projectFullname={project.fullName}
-              projectName={project.name}
-              projectUrl={project.projectUrl}
-              githubUrl={project.githubUrl}
-              toggleModalLinks={toggleModalLinks}
-              key={project.name}
-            />
-          );
-        })}
+      <div className="mt-2-3rem">
+        <div className="selectTechnology">
+          <label
+            htmlFor="technology"
+            className="m-0 d-inline-block rounded p-1 px-3">
+            Tecnologia
+          </label>
+          <select
+            className="d-block"
+            id="technology"
+            onChange={handleSelectTechnology}>
+            <option value={"allTechnologies"} defaultValue>
+              Todas as tecnologias
+            </option>
+            {projects.map(technology => {
+              return (
+                <option
+                  value={technology.technology}
+                  key={`option-${technology.technology}`}>
+                  {technology.technology}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        <div className="row mb-0">
+          {allProjects.map(project => {
+            return (
+              <Project
+                inDevelopment={project.inDevelopment}
+                usedTechnologies={project.usedTechnologies}
+                projectFullname={project.fullName}
+                projectName={project.name}
+                projectUrl={project.projectUrl}
+                githubUrl={project.githubUrl}
+                toggleModalLinks={toggleModalLinks}
+                key={project.name}
+              />
+            );
+          })}
+        </div>
       </div>
       {/* {projects.map(technology => {
         return (
