@@ -322,6 +322,18 @@ function Projects({ toggleModalLinks }) {
         },
         {
           technologyName: "React JS",
+          fullName: "Repositórios",
+          name: "Repositórios",
+          usedTechnologies: [
+            <ReactIcon />,
+            <CssIcon />,
+          ],
+          projectUrl: "https://projeto-repos-react.netlify.app",
+          githubUrl:
+            "https://github.com/Nicolas-Lima/Projetos-React-JS/tree/main/projeto-repos",
+        },
+        {
+          technologyName: "React JS",
           fullName: "Prime Flix",
 
           name: "Prime Flix",
