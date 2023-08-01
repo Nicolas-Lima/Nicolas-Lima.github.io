@@ -1,6 +1,3 @@
 indexProduction.html
 .vscode/
 COMPILAR/*
-
-dist/*
-dist/bundle.js
