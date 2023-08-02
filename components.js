@@ -324,13 +324,19 @@ function Projects({ toggleModalLinks }) {
           technologyName: "React JS",
           fullName: "Repositórios",
           name: "Repositórios",
-          usedTechnologies: [
-            <ReactIcon />,
-            <CssIcon />,
-          ],
+          usedTechnologies: [<ReactIcon />, <CssIcon />],
           projectUrl: "https://projeto-repos-react.netlify.app",
           githubUrl:
             "https://github.com/Nicolas-Lima/Projetos-React-JS/tree/main/projeto-repos",
+        },
+        {
+          technologyName: "React JS",
+          fullName: "Sistema chamados",
+          name: "Sistema chamados",
+          usedTechnologies: [<ReactIcon />, <CssIcon />, <FirebaseIcon />],
+          projectUrl: "https://ni-sistema-chamados.netlify.app",
+          githubUrl:
+            "https://github.com/Nicolas-Lima/Projetos-React-JS/tree/main/sistema-chamados",
         },
         {
           technologyName: "React JS",
