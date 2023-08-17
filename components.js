@@ -163,19 +163,19 @@ function Skills() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 function About() {
   const [mailIconContainerTooltip, setMailIconContainerTooltip] =
-    useState("Copiar e-mail");
-  const email = "nicolasdelimaalves00@gmail.com";
+    useState('Copiar e-mail')
+  const email = 'nicolasdelimaalves00@gmail.com'
 
   const copyEmailToClipboard = () => {
     navigator.clipboard.writeText(email).then(() => {
-      setMailIconContainerTooltip("E-mail copiado!");
-    });
-  };
+      setMailIconContainerTooltip('E-mail copiado!')
+    })
+  }
 
   return (
     <div>
@@ -192,31 +192,31 @@ function About() {
         <div className="aboutText">
           Sou uma pessoa apaixonada por programação com foco em
           desenvolvimento web e atualmente estou focado em aprimorar minhas
-          habilidades como{" "}
+          habilidades como{' '}
           <span className="text-light-green">Desenvolvedor Front-End</span>
-          , com especial interesse na tecnologia{" "}
+          , com especial interesse na tecnologia{' '}
           <span className="text-light-green">React JS</span>. Estou sempre
           em busca de aprimorar minhas habilidades e trabalhar em projetos
           desafiadores. Há um ano, tenho me dedicado também ao estudo de
-          tecnologias modernas como{" "}
-          <span className="text-light-green">Javascript</span>,{" "}
-          <span className="text-light-green">SQL</span> e{" "}
+          tecnologias modernas como{' '}
+          <span className="text-light-green">Javascript</span>,{' '}
+          <span className="text-light-green">SQL</span> e{' '}
           <span className="text-light-green">GIT</span>.
         </div>
 
         <div className="mt-3">
-          Abaixo, apresentarei minhas{" "}
+          Abaixo, apresentarei minhas{' '}
           <a
             href="#skills"
             className="link-without-formatting text-light-green text-hover-light-blue">
             <span className="me-1 cursor-hover-pointer">habilidades</span>
           </a>
-          e também compartilharei algum dos{" "}
+          e também compartilharei algum dos{' '}
           <a
             href="#projects"
             className="link-without-formatting text-light-green text-hover-light-blue">
             <span className="cursor-hover-pointer">projetos</span>
-          </a>{" "}
+          </a>{' '}
           que desenvolvi.
         </div>
       </div>
@@ -224,7 +224,7 @@ function About() {
         <div
           className="mt-3 mailIcon-container w-auto d-inline-block"
           data-tooltip={mailIconContainerTooltip}
-          onMouseLeave={() => setMailIconContainerTooltip("Copiar e-mail")}
+          onMouseLeave={() => setMailIconContainerTooltip('Copiar e-mail')}
           onClick={copyEmailToClipboard}>
           <MailIcon />
           <span className="ms-2 email">{email}</span>
@@ -249,7 +249,7 @@ function About() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 function Nav() {
@@ -285,191 +285,191 @@ function Nav() {
         </li>
       </ul>
     </nav>
-  );
+  )
 }
 
 function Projects({ toggleModalLinks }) {
   const projects = [
     {
-      technology: "React JS",
+      technology: 'React JS',
       technologyIcon: <ReactIcon />,
       projects: [
         {
-          technologyName: "React JS",
-          fullName: "Site do meu TCC",
+          technologyName: 'React JS',
+          fullName: 'Loja de produtos',
           usedTechnologies: [
             <ReactIcon />,
             <BootstrapIcon />,
-            <FirebaseIcon />,
+            <FirebaseIcon />
           ],
           inDevelopment: true,
-          name: "Site do meu TCC",
-          projectUrl: "https://sitetccinfo.netlify.app/",
-          githubUrl: "https://github.com/Nicolas-Lima/site_tcc",
+          name: 'Loja de produtos',
+          projectUrl: 'https://a-product-store.netlify.app/',
+          githubUrl: 'https://github.com/Nicolas-Lima/product-store'
         },
         {
-          technologyName: "React JS",
-          fullName: "Loja de produtos",
+          technologyName: 'React JS',
+          fullName: 'Site do meu TCC',
           usedTechnologies: [
             <ReactIcon />,
             <BootstrapIcon />,
-            <FirebaseIcon />,
+            <FirebaseIcon />
           ],
           inDevelopment: true,
-          name: "Loja de produtos",
-          projectUrl: "https://a-product-store.netlify.app/",
-          githubUrl: "https://github.com/Nicolas-Lima/product-store",
+          name: 'Site do meu TCC',
+          projectUrl: 'https://sitetccinfo.netlify.app/',
+          githubUrl: 'https://github.com/Nicolas-Lima/site_tcc'
         },
         {
-          technologyName: "React JS",
-          fullName: "Repositórios",
-          name: "Repositórios",
+          technologyName: 'React JS',
+          fullName: 'Repositórios',
+          name: 'Repositórios',
           usedTechnologies: [<ReactIcon />, <CssIcon />],
-          projectUrl: "https://projeto-repos-react.netlify.app",
+          projectUrl: 'https://projeto-repos-react.netlify.app',
           githubUrl:
-            "https://github.com/Nicolas-Lima/Projetos-React-JS/tree/main/projeto-repos",
+            'https://github.com/Nicolas-Lima/Projetos-React-JS/tree/main/projeto-repos'
         },
         {
-          technologyName: "React JS",
-          fullName: "Sistema chamados",
-          name: "Sistema chamados",
+          technologyName: 'React JS',
+          fullName: 'Sistema chamados',
+          name: 'Sistema chamados',
           usedTechnologies: [<ReactIcon />, <CssIcon />, <FirebaseIcon />],
-          projectUrl: "https://ni-sistema-chamados.netlify.app",
+          projectUrl: 'https://ni-sistema-chamados.netlify.app',
           githubUrl:
-            "https://github.com/Nicolas-Lima/Projetos-React-JS/tree/main/sistema-chamados",
+            'https://github.com/Nicolas-Lima/Projetos-React-JS/tree/main/sistema-chamados'
         },
         {
-          technologyName: "React JS",
-          fullName: "Prime Flix",
+          technologyName: 'React JS',
+          fullName: 'Prime Flix',
 
-          name: "Prime Flix",
+          name: 'Prime Flix',
           usedTechnologies: [
             <ReactIcon />,
             <BootstrapIcon />,
-            <FirebaseIcon />,
+            <FirebaseIcon />
           ],
-          projectUrl: "https://rdmetas.000webhostapp.com/",
+          projectUrl: 'https://rdmetas.000webhostapp.com/',
           githubUrl:
-            "https://github.com/Nicolas-Lima/Projetos-React-JS/tree/main/Prime%20Flix",
-        },
-      ],
+            'https://github.com/Nicolas-Lima/Projetos-React-JS/tree/main/Prime%20Flix'
+        }
+      ]
     },
     {
-      technology: "Javascript",
+      technology: 'Javascript',
       technologyIcon: <JavascriptIcon />,
       projects: [
         {
-          technologyName: "Javascript",
-          fullName: "Clock App",
-          name: "Clock App",
+          technologyName: 'Javascript',
+          fullName: 'Clock App',
+          name: 'Clock App',
           usedTechnologies: [<JavascriptIcon />, <BootstrapIcon />],
-          projectUrl: "projetos/clock_app/index.html",
+          projectUrl: 'projetos/clock_app/index.html',
           githubUrl:
-            "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Clock%20App",
+            'https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Clock%20App'
         },
         {
-          technologyName: "Javascript",
-          fullName: "Primeira Game Engine",
-          name: "Primeira Game Engine",
+          technologyName: 'Javascript',
+          fullName: 'Primeira Game Engine',
+          name: 'Primeira Game Engine',
           usedTechnologies: [<JavascriptIcon />, <CssIcon />],
-          projectUrl: "projetos/game_engine_1/index.html",
+          projectUrl: 'projetos/game_engine_1/index.html',
           githubUrl:
-            "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Game%20Engine%201",
+            'https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Game%20Engine%201'
         },
         {
-          technologyName: "Javascript",
-          fullName: "Segunda Game Engine",
-          name: "Segunda Game Engine",
+          technologyName: 'Javascript',
+          fullName: 'Segunda Game Engine',
+          name: 'Segunda Game Engine',
           usedTechnologies: [<JavascriptIcon />, <CssIcon />],
-          projectUrl: "projetos/game_engine_2/index.html",
+          projectUrl: 'projetos/game_engine_2/index.html',
           githubUrl:
-            "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Game%20Engine%202",
+            'https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Game%20Engine%202'
         },
         {
-          technologyName: "Javascript",
-          fullName: "Jogo da velha",
-          name: "Jogo da velha",
+          technologyName: 'Javascript',
+          fullName: 'Jogo da velha',
+          name: 'Jogo da velha',
           usedTechnologies: [<JavascriptIcon />, <BootstrapIcon />],
-          projectUrl: "projetos/jogoVelha/index.html",
+          projectUrl: 'projetos/jogoVelha/index.html',
           githubUrl:
-            "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Joguinho%20da%20velha",
+            'https://github.com/Nicolas-Lima/Projetos-JS/tree/main/Joguinho%20da%20velha'
         },
         {
-          technologyName: "Javascript",
-          fullName: "To-do List 1",
-          name: "To-do List 1",
+          technologyName: 'Javascript',
+          fullName: 'To-do List 1',
+          name: 'To-do List 1',
           usedTechnologies: [<JavascriptIcon />, <CssIcon />],
-          projectUrl: "projetos/to-do-lists/To-do-List-2/index.html",
+          projectUrl: 'projetos/to-do-lists/To-do-List-2/index.html',
           githubUrl:
-            "https://github.com/Nicolas-Lima/Projetos-JS/tree/main/To-do%20List%201",
-        },
-      ],
+            'https://github.com/Nicolas-Lima/Projetos-JS/tree/main/To-do%20List%201'
+        }
+      ]
     },
     {
-      technology: "Node JS",
+      technology: 'Node JS',
       technologyIcon: <NodeJSIcon />,
       projects: [
         {
-          technologyName: "Node JS",
-          fullName: "To-do List 2",
-          name: "To-do List 2",
+          technologyName: 'Node JS',
+          fullName: 'To-do List 2',
+          name: 'To-do List 2',
           usedTechnologies: [<NodeJSIcon />, <JavascriptIcon />],
-          projectUrl: "https://nicolas-listatarefas.herokuapp.com/",
+          projectUrl: 'https://nicolas-listatarefas.herokuapp.com/',
           githubUrl:
-            "https://github.com/Nicolas-Lima/Projetos-Node-JS/tree/main/listaTarefas",
-        },
-      ],
-    },
-  ];
+            'https://github.com/Nicolas-Lima/Projetos-Node-JS/tree/main/listaTarefas'
+        }
+      ]
+    }
+  ]
 
   const getAllProjects = () => {
     return projects.reduce(
       (allProjects, technology) => [
         ...allProjects,
-        ...technology.projects,
+        ...technology.projects
       ],
       []
-    );
-  };
+    )
+  }
 
   const [selectedTechnology, setSelectedTechnology] =
-    useState("allTechnologies");
-  const [allProjects, setAllProjects] = useState(getAllProjects());
+    useState('allTechnologies')
+  const [allProjects, setAllProjects] = useState(getAllProjects())
 
   const handleSelectTechnology = e => {
-    setSelectedTechnology(e.target.value);
-    const selectedTechnology = e.target.value;
+    setSelectedTechnology(e.target.value)
+    const selectedTechnology = e.target.value
 
     const renderedProjects = document.body.querySelectorAll(
-      "#projects .project"
-    );
+      '#projects .project'
+    )
 
-    if (selectedTechnology === "allTechnologies") {
+    if (selectedTechnology === 'allTechnologies') {
       renderedProjects.forEach(project => {
-        project.classList.add("fade-out");
+        project.classList.add('fade-out')
         setTimeout(() => {
-          project.classList.remove("fade-out");
-          setAllProjects(getAllProjects());
-        }, 200);
-      });
+          project.classList.remove('fade-out')
+          setAllProjects(getAllProjects())
+        }, 200)
+      })
 
-      return;
+      return
     }
 
     const selectedTechnologyProjects = projects.filter(
       technology => technology.technology === selectedTechnology
-    )[0]?.projects;
+    )[0]?.projects
 
     renderedProjects.forEach(project => {
-      project.classList.add("fade-out");
+      project.classList.add('fade-out')
       setTimeout(() => {
-        project.classList.remove("fade-out");
+        project.classList.remove('fade-out')
         if (selectedTechnologyProjects) {
-          setAllProjects(selectedTechnologyProjects);
+          setAllProjects(selectedTechnologyProjects)
         }
-      }, 200);
-    });
-  };
+      }, 200)
+    })
+  }
 
   return (
     <div className="mb-3 mt-4 mt-md-5" id="projects">
@@ -487,7 +487,7 @@ function Projects({ toggleModalLinks }) {
             className="d-block"
             id="technology"
             onChange={handleSelectTechnology}>
-            <option value={"allTechnologies"} defaultValue>
+            <option value={'allTechnologies'} defaultValue>
               Todas as tecnologias
             </option>
             {projects.map(technology => {
@@ -497,7 +497,7 @@ function Projects({ toggleModalLinks }) {
                   key={`option-${technology.technology}`}>
                   {technology.technology}
                 </option>
-              );
+              )
             })}
           </select>
         </div>
@@ -516,7 +516,7 @@ function Projects({ toggleModalLinks }) {
                 toggleModalLinks={toggleModalLinks}
                 key={project.name}
               />
-            );
+            )
           })}
         </div>
       </div>
@@ -541,7 +541,7 @@ function Projects({ toggleModalLinks }) {
         );
       })} */}
     </div>
-  );
+  )
 }
 
 function Project({
@@ -551,13 +551,13 @@ function Project({
   projectFullname,
   projectName,
   projectUrl,
-  githubUrl = "",
+  githubUrl = '',
   toggleModalLinks,
-  usedTechnologies,
+  usedTechnologies
 }) {
   const UsedTechnologies = ({
-    className = "mt-4",
-    usedTechnologies = [],
+    className = 'mt-4',
+    usedTechnologies = []
   }) => {
     return (
       <>
@@ -571,14 +571,14 @@ function Project({
                     key={`usedTechnology-${projectFullname}-${index}`}>
                     {usedTechnology}
                   </div>
-                );
+                )
               })}
             </div>
           </div>
         )}
       </>
-    );
-  };
+    )
+  }
   const SubmitButton = () => {
     return (
       <button
@@ -589,15 +589,15 @@ function Project({
         }>
         Acessar
       </button>
-    );
-  };
+    )
+  }
 
   return (
     <div
       className={`col-sm-12 col-md-6 col-lg-4 ${
         (selectedTechnology === technologyName ||
-          selectedTechnology === "allTechnologies") &&
-        "fade-in"
+          selectedTechnology === 'allTechnologies') &&
+        'fade-in'
       }`}>
       <article className={`project`}>
         {inDevelopment ? (
@@ -618,7 +618,7 @@ function Project({
         <UsedTechnologies usedTechnologies={usedTechnologies} />
       </article>
     </div>
-  );
+  )
 }
 
 function LinksModal({ toggleModalLinks }) {
@@ -630,8 +630,8 @@ function LinksModal({ toggleModalLinks }) {
           aria-label="Close"
           className="close"
           style={{
-            transform: "scale(1.4)",
-            marginRight: "5px",
+            transform: 'scale(1.4)',
+            marginRight: '5px'
           }}></a>
 
         <h3 id="projectName">Acessar</h3>
@@ -658,32 +658,32 @@ function LinksModal({ toggleModalLinks }) {
         </div>
       </article>
     </dialog>
-  );
+  )
 }
 
 function ThemeToggler() {
-  const [savedTheme, setSavedTheme] = useState("");
+  const [savedTheme, setSavedTheme] = useState('')
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("@savedTheme") || "dark";
-    setSavedTheme(savedTheme);
-  }, []);
+    const savedTheme = localStorage.getItem('@savedTheme') || 'dark'
+    setSavedTheme(savedTheme)
+  }, [])
 
   const toggleTheme = () => {
-    const htmlElement = document.documentElement;
-    const dataTheme = htmlElement.getAttribute("data-theme");
+    const htmlElement = document.documentElement
+    const dataTheme = htmlElement.getAttribute('data-theme')
     htmlElement.setAttribute(
-      "data-theme",
-      dataTheme === "dark" ? "light" : "dark"
-    );
+      'data-theme',
+      dataTheme === 'dark' ? 'light' : 'dark'
+    )
 
-    setSavedTheme(htmlElement.getAttribute("data-theme"));
+    setSavedTheme(htmlElement.getAttribute('data-theme'))
 
     localStorage.setItem(
-      "@savedTheme",
-      htmlElement.getAttribute("data-theme")
-    );
-  };
+      '@savedTheme',
+      htmlElement.getAttribute('data-theme')
+    )
+  }
 
   return (
     <a
@@ -692,7 +692,7 @@ function ThemeToggler() {
       onClick={toggleTheme}
       target="_blank"
       aria-label="theme toggle">
-      {savedTheme == "dark" ? <SunIcon /> : <MoonIcon />}
+      {savedTheme == 'dark' ? <SunIcon /> : <MoonIcon />}
     </a>
-  );
+  )
 }
