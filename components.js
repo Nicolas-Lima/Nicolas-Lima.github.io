@@ -355,6 +355,21 @@ function Projects({ toggleModalLinks }) {
       ]
     },
     {
+      technology: 'PHP',
+      technologyIcon: <PhpIcon />,
+      projects: [
+        {
+          technologyName: 'PHP',
+          fullName: 'Blog Codar',
+          name: 'Blog Codar',
+          usedTechnologies: [<PhpIcon />, <CssIcon />],
+          projectUrl: 'https://nic-php.000webhostapp.com/blogCodar/',
+          githubUrl:
+            'https://github.com/Nicolas-Lima/Projetos-PHP/tree/main/blogCodar'
+        }
+      ]
+    },
+    {
       technology: 'Javascript',
       technologyIcon: <JavascriptIcon />,
       projects: [
