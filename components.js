@@ -76,6 +76,16 @@ function Skills() {
         <div className="category mt-2-3rem">
           <h3 className="text-light-blue category-title">Back-end</h3>
           <div className="grid">
+            <div className="mb-3 mb-lg-0" data-tooltip="Intermediário">
+              <div className="d-flex align-items-center">
+                <PhpIcon />
+                <span className="ms-2">PHP</span>
+              </div>
+              <progress
+                value="2"
+                max="3"
+                className="skillLevel  mt-2"></progress>
+            </div>
             <div className="mb-3 mb-lg-0" data-tooltip="Iniciante">
               <div className="d-flex align-items-center">
                 <PythonIcon />
@@ -86,16 +96,7 @@ function Skills() {
                 max="3"
                 className="skillLevel  mt-2"></progress>
             </div>
-            <div className="mb-3 mb-lg-0" data-tooltip="Iniciante">
-              <div className="d-flex align-items-center">
-                <PhpIcon />
-                <span className="ms-2">PHP</span>
-              </div>
-              <progress
-                value="1"
-                max="3"
-                className="skillLevel  mt-2"></progress>
-            </div>
+
             <div className="mb-3 mb-lg-0" data-tooltip="Iniciante">
               <div className="d-flex align-items-center">
                 <NodeJSIcon />
