@@ -8,31 +8,32 @@ function Skills() {
         <div className="category mt-2-3rem">
           <h3 className="text-light-blue category-title">Front-end</h3>
           <div className="grid">
-            <div className="mb-3 mb-lg-0" data-tooltip="Intermediário">
+            <div className="mb-3 mb-lg-0" data-tooltip="Avançado">
+              <div className="d-flex align-items-center">
+                <JavascriptIcon />
+                <span className="ms-2">Javascript</span>
+              </div>
+
+              <progress
+                value="3"
+                max="3"
+                className="skillLevel  mt-2"></progress>
+            </div>
+            <div className="mb-3 mb-lg-0" data-tooltip="Avançado">
               <div className="d-flex align-items-center">
                 <HtmlIcon />
                 <span className="ms-2">HTML</span>
               </div>
               <progress
-                value="2"
+                value="3"
                 max="3"
                 className="skillLevel mt-2"></progress>
             </div>
-            <div className="mb-3 mb-lg-0" data-tooltip="Iniciante">
+
+            <div className="mb-3 mb-lg-0" data-tooltip="Intermediário">
               <div className="d-flex align-items-center">
                 <CssIcon />
                 <span className="ms-2">CSS</span>
-              </div>
-
-              <progress
-                value="1"
-                max="3"
-                className="skillLevel  mt-2"></progress>
-            </div>
-            <div className="mb-3 mb-lg-0" data-tooltip="Intermediário">
-              <div className="d-flex align-items-center">
-                <JavascriptIcon />
-                <span className="ms-2">Javascript</span>
               </div>
 
               <progress
@@ -48,13 +49,13 @@ function Skills() {
           </h3>
 
           <div className="grid">
-            <div className="mb-3 mb-lg-0" data-tooltip="Intermediário">
+            <div className="mb-3 mb-lg-0" data-tooltip="Avançado">
               <div className="d-flex align-items-center">
                 <ReactIcon />
                 <span className="ms-2">React JS</span>
               </div>
               <progress
-                value="2"
+                value="3"
                 max="3"
                 className="skillLevel  mt-2"></progress>
             </div>
@@ -125,13 +126,13 @@ function Skills() {
                 max="3"
                 className="skillLevel  mt-2"></progress>
             </div>
-            <div className="mb-3 mb-lg-0" data-tooltip="Iniciante">
+            <div className="mb-3 mb-lg-0" data-tooltip="Intermediário">
               <div className="d-flex align-items-center">
                 <FirebaseIcon />
                 <span className="ms-2">Firebase</span>
               </div>
               <progress
-                value="1"
+                value="2"
                 max="3"
                 className="skillLevel  mt-2"></progress>
             </div>
@@ -232,7 +233,7 @@ function About() {
         </div>
         <div className="mt-3 d-flex align-items-center link-info">
           <a
-            href="https://www.linkedin.com/in/n%C3%ADcolaslima/"
+            href="https://www.linkedin.com/in/nicolaslimaalv"
             target="_blank"
             className="remove-focus-background shadow-none bg-transparent">
             <LinkedinIcon />
@@ -303,7 +304,7 @@ function Projects({ toggleModalLinks }) {
             <BootstrapIcon />,
             <FirebaseIcon />
           ],
-          inDevelopment: true,
+          inDevelopment: false,
           name: 'Loja de produtos',
           projectUrl: 'https://a-product-store.netlify.app/',
           githubUrl: 'https://github.com/Nicolas-Lima/product-store'
@@ -367,6 +368,15 @@ function Projects({ toggleModalLinks }) {
           projectUrl: 'https://nic-php.000webhostapp.com/blogCodar/',
           githubUrl:
             'https://github.com/Nicolas-Lima/Projetos-PHP/tree/main/blogCodar'
+        },
+        {
+          technologyName: 'PHP',
+          fullName: 'Agenda',
+          name: 'Agenda',
+          usedTechnologies: [<PhpIcon />, <BootstrapIcon />, <CssIcon />],
+          projectUrl: 'https://nic-php.000webhostapp.com/agenda/',
+          githubUrl:
+            'https://github.com/Nicolas-Lima/Projetos-PHP/tree/main/agenda'
         }
       ]
     },
