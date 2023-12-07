@@ -192,15 +192,17 @@ function About() {
         </div>
 
         <div className="aboutText">
-          Sou uma pessoa apaixonada por programação com foco em
-          desenvolvimento web e atualmente estou focado em aprimorar minhas
-          habilidades como{' '}
-          <span className="text-light-green">Desenvolvedor Front-End</span>
-          , com especial interesse na tecnologia{' '}
-          <span className="text-light-green">React JS</span>. Estou sempre
-          em busca de aprimorar minhas habilidades e trabalhar em projetos
-          desafiadores. Há um ano, tenho me dedicado também ao estudo de
-          tecnologias modernas como{' '}
+          Sou uma pessoa apaixonada por programação e atualmente estou
+          focado em aprimorar minhas habilidades como{' '}
+          <span className="text-light-green">
+            Desenvolvedor Full-Stack
+          </span>
+          , com especial interesse nas tecnologias{' '}
+          <span className="text-light-green">React JS</span>{' e '}
+          <span className="text-light-green">PHP</span>. Estou
+          sempre em busca de aprimorar minhas habilidades e trabalhar em
+          projetos desafiadores. Há um ano, tenho me dedicado também ao
+          estudo de outras tecnologias modernas como{' '}
           <span className="text-light-green">Javascript</span>,{' '}
           <span className="text-light-green">SQL</span> e{' '}
           <span className="text-light-green">GIT</span>.
