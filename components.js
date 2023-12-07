@@ -183,7 +183,7 @@ function About() {
     <div>
       <h2 className="mb-3">Nícolas Lima</h2>
       <h3 className="text-light-green mb-4">
-        Estudante de Desenvolvimento Front-End React JS
+        Estudante de Desenvolvimento Full-Stack
       </h3>
       <div className="fs-5">
         <div className="welcomeMessage text-light-blue mb-3">
@@ -198,11 +198,12 @@ function About() {
             Desenvolvedor Full-Stack
           </span>
           , com especial interesse nas tecnologias{' '}
-          <span className="text-light-green">React JS</span>{' e '}
-          <span className="text-light-green">PHP</span>. Estou
-          sempre em busca de aprimorar minhas habilidades e trabalhar em
-          projetos desafiadores. Há um ano, tenho me dedicado também ao
-          estudo de outras tecnologias modernas como{' '}
+          <span className="text-light-green">React JS</span>
+          {' e '}
+          <span className="text-light-green">PHP</span>. Estou sempre em
+          busca de aprimorar minhas habilidades e trabalhar em projetos
+          desafiadores. Há um ano, tenho me dedicado também ao estudo de
+          outras tecnologias modernas como{' '}
           <span className="text-light-green">Javascript</span>,{' '}
           <span className="text-light-green">SQL</span> e{' '}
           <span className="text-light-green">GIT</span>.
